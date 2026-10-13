@@ -61,8 +61,6 @@ svg.m{display:block}
 .name .deva{font-size:.74em;letter-spacing:0;color:var(--indigo)}
 .portrait{position:relative;z-index:2;width:clamp(14rem,26vw,20rem);margin-top:clamp(1.4rem,3vw,2.6rem)}
 .portrait::before{content:"";position:absolute;left:-14%;right:-14%;top:30%;bottom:0;background:var(--indigo-soft);border-radius:999px 999px 0 0;z-index:-1}
-.hairflower{position:absolute;left:62.4%;top:23.6%;width:9.5%;min-width:1.7rem;translate:-50% -50%;color:var(--rust);z-index:3;pointer-events:none;filter:drop-shadow(0 2px 3px rgba(30,32,48,.28));animation:petal 6s ease-in-out infinite}
-@keyframes petal{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
 .portrait::after{content:"";position:absolute;left:-20%;right:-20%;bottom:0;height:2px;background:var(--line)}
 .portrait img{width:100%;display:block;filter:drop-shadow(0 18px 30px rgba(30,32,48,.16))}
 .stamp{position:absolute;color:var(--indigo);pointer-events:none}
@@ -551,7 +549,7 @@ dialog button{background:var(--cloth);color:var(--indigo);border:0;border-radius
       <p class="hi">Hi, this is</p>
       <h1 class="name">Ishi<span class="deva">ता</span></h1>
       <p class="pitch">I design services and products that keep people's dignity intact, from a prosthetic care centre in Jaipur to a hospital kitchen in Bengaluru.</p>
-      <div class="portrait"><img src="img/ishita.png" alt="Ishita Sarin, smiling, in a blue floral dress"><svg class="hairflower" viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><button class="bubble" id="bubble" type="button" data-go="about"><b>Hi, I'm Ishita!</b><span>Tap to get to know me <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></span></button></div>
+      <div class="portrait"><img src="img/ishita.png" alt="Ishita Sarin, smiling, in a blue floral dress"><button class="bubble" id="bubble" type="button" data-go="about"><b>Hi, I'm Ishita!</b><span>Tap to get to know me <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></span></button></div>
       <p class="hero-foot"><span>Human-centred designer</span><i>·</i><span>M.Des student, Srishti Manipal</span><i>·</i><span>Computer Science engineer turned designer</span></p>
     </div>
   </section>
