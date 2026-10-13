@@ -1,0 +1,1623 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ishita Sarin Portfolio</title>
+<meta name="description" content="Ishita Sarin is a human-centred designer and M.Des student at Srishti Manipal: research, service design and UX/UI work rooted in Indian contexts.">
+<meta name="theme-color" content="#F5F0E6">
+<meta property="og:title" content="Ishita Sarin · Human-centred designer">
+<meta property="og:description" content="Ishita Sarin is a human-centred designer and M.Des student at Srishti Manipal: research, service design and UX/UI work rooted in Indian contexts.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%2326305E'%3E%3Cellipse cx='50' cy='24' rx='9' ry='20'/%3E%3Cellipse cx='50' cy='76' rx='9' ry='20'/%3E%3Cellipse cx='24' cy='50' rx='20' ry='9'/%3E%3Cellipse cx='76' cy='50' rx='20' ry='9'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='10' fill='%23F5F0E6'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%23B9542F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+Devanagari:wght@200;300&family=Figtree:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: cream "printed cloth" ground with Jaipur hand-block motifs; indigo framed panels for work; a floating glass nav; views for Home / About / Funsies / each case study. Single light theme by choice: it is printed cloth. */
+:root{
+  color-scheme:light;
+  --cloth:#F5F0E6; --cloth-2:#EDE6D8; --indigo:#26305E; --indigo-2:#323D74; --indigo-soft:#DCDFEC;
+  --rust:#B9542F; --ink:#1E2030; --soft:#5C5F70; --line:#CFC6B4; --on-indigo:#F3EEE3; --on-indigo-soft:#B9BDD6;
+  --display:"Cormorant", "Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --deva:"Noto Serif Devanagari", "Kohinoor Devanagari", serif;
+  --body:"Figtree", "Helvetica Neue", Arial, sans-serif;
+  --wrap:72rem;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+img,video{max-width:100%}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--cloth);background-image:radial-gradient(rgba(38,48,94,.07) 1px,transparent 1.2px);background-size:22px 22px;color:var(--ink);font-family:var(--body);font-weight:400;font-size:clamp(1rem,.96rem + .2vw,1.1rem);line-height:1.65;padding-inline:clamp(16px,4vw,40px);padding-block:0}
+.wrap{max-width:var(--wrap);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--rust);outline-offset:3px;border-radius:8px}
+.deva{font-family:var(--deva);font-weight:200}
+svg.m{display:block}
+
+/* ---------- floating glass nav ---------- */
+.nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:clamp(.6rem,3vw,2.6rem);padding:.55rem clamp(.9rem,3vw,1.6rem);border-radius:999px;background:rgba(245,240,230,.62);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid rgba(38,48,94,.12);box-shadow:0 8px 30px rgba(30,32,48,.08);max-width:calc(100vw - 32px)}
+.nav .logo{width:30px;height:30px;color:var(--indigo);background:none;border:0;padding:0;cursor:pointer;flex:none}
+.nav a{font-family:var(--display);font-size:clamp(1.05rem,1rem + .4vw,1.3rem);text-decoration:none;color:var(--ink);padding:.15rem .2rem;white-space:nowrap}
+.nav a[aria-current="page"]::before,.nav a[aria-current="page"]::after{content:"◆";font-size:.5em;vertical-align:middle;margin-inline:.45em;color:var(--rust)}
+.nav.dark{background:rgba(38,48,94,.55);border-color:rgba(243,238,227,.18)}
+.nav.dark a,.nav.dark .logo{color:var(--on-indigo)}
+
+/* ---------- views ---------- */
+.view[hidden]{display:none}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:min(56rem,100svh);display:grid;place-items:center;overflow:hidden;margin-inline:calc(-1 * clamp(16px,4vw,40px));padding-inline:clamp(16px,4vw,40px);padding-top:6.5rem}
+.border-band{position:absolute;top:0;left:0;width:100%;height:22px;color:var(--indigo);opacity:.85}
+.hero-inner{position:relative;width:100%;max-width:var(--wrap);text-align:center;display:grid;justify-items:center}
+.hi{font-family:var(--body);font-weight:300;color:var(--soft);font-size:clamp(1rem,.9rem + .4vw,1.2rem);letter-spacing:.02em}
+.name{font-family:var(--display);font-weight:300;font-size:clamp(4.6rem,2rem + 12vw,12rem);line-height:.86;color:var(--indigo);letter-spacing:-.02em;margin-top:.2rem;position:relative;z-index:1}
+.name .deva{font-size:.74em;letter-spacing:0;color:var(--indigo)}
+.portrait{position:relative;z-index:2;width:clamp(14rem,26vw,20rem);margin-top:clamp(1.4rem,3vw,2.6rem)}
+.portrait::before{content:"";position:absolute;left:-14%;right:-14%;top:30%;bottom:0;background:var(--indigo-soft);border-radius:999px 999px 0 0;z-index:-1}
+.portrait::after{content:"";position:absolute;left:-20%;right:-20%;bottom:0;height:2px;background:var(--line)}
+.portrait img{width:100%;display:block;filter:drop-shadow(0 18px 30px rgba(30,32,48,.16))}
+.stamp{position:absolute;color:var(--indigo);pointer-events:none}
+.stamp .r{color:var(--rust)}
+.st1{left:3%;top:30%;width:clamp(4rem,9vw,7.5rem)}
+.st2{left:7%;bottom:24%;width:clamp(3.5rem,7vw,6rem)}
+.st3{right:4%;top:24%;width:clamp(4rem,8vw,7rem)}
+.st4{right:8%;bottom:26%;width:clamp(4.5rem,10vw,8rem)}
+.st5{left:22%;top:16%;width:clamp(2rem,3.5vw,3rem);opacity:.7}
+.st6{right:25%;top:12%;width:clamp(2rem,3.5vw,3rem);opacity:.7}
+@media (max-width:700px){.st1,.st6{display:none}.st2{left:2%;bottom:30%}.st3{right:3%;top:5.5rem;width:2.6rem}.st4{right:2%;bottom:30%}.st5{left:6%;top:6rem}}
+.pitch,.hi,.name{position:relative;z-index:2}
+
+/* speech bubble */
+.bubble{position:absolute;z-index:3;left:84%;top:40%;white-space:nowrap;background:var(--indigo);color:var(--on-indigo);border:0;border-radius:22px 22px 22px 4px;padding:.85rem 1.2rem;text-align:left;cursor:pointer;box-shadow:0 14px 30px rgba(38,48,94,.28);max-width:15rem;transition:transform .25s}
+.bubble:hover{transform:translateY(-3px) rotate(-1deg)}
+.bubble b{display:block;font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.1}
+.bubble span{display:block;font-size:.85rem;color:var(--on-indigo-soft);margin-top:.3rem}
+.bubble .dots{display:inline-flex;gap:3px;margin-left:.3rem;vertical-align:middle}
+.bubble .dots i{width:5px;height:5px;border-radius:50%;background:var(--on-indigo);animation:blink 1.4s infinite}
+.bubble .dots i:nth-child(2){animation-delay:.2s}.bubble .dots i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+@media (max-width:700px){.bubble{left:auto;right:-22%;top:auto;bottom:22%;max-width:9.5rem;white-space:normal;padding:.55rem .8rem}.bubble b{font-size:1.1rem}.bubble span{font-size:.75rem}.portrait{margin-top:1.2rem}.hero-foot{flex-direction:column;align-items:center;gap:.4rem}}
+.hero-foot{position:relative;z-index:4;display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1.6rem}
+.hero-foot span{font-size:.95rem;font-weight:500;color:var(--on-indigo);background:var(--indigo);border-radius:999px;padding:.45rem 1rem;box-shadow:0 6px 16px rgba(38,48,94,.18)}
+.hero-foot span:nth-of-type(2){background:var(--rust)}
+.hero-foot i{display:none}
+
+/* ---------- A LITTLE LOOK ---------- */
+.look{padding-block:clamp(4rem,9vw,7rem) 2rem;text-align:center;display:grid;justify-items:center;gap:1rem}
+.look h2{font-style:italic;font-size:clamp(2.6rem,1.8rem + 3.5vw,4.6rem);color:var(--indigo)}
+.look p{max-width:40rem;color:var(--soft);font-size:1.08rem}
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;margin-top:1rem}
+.pill{font-family:var(--display);font-size:1.15rem;padding:.45rem 1.4rem;border-radius:999px;border:1.3px solid var(--indigo);background:transparent;color:var(--indigo);cursor:pointer;transition:background .2s,color .2s}
+.pill[aria-pressed="true"],.pill:hover{background:var(--indigo);color:var(--on-indigo)}
+
+/* scooped-corner frame, like a carved window */
+.frame{--c:34px;background:var(--panel,var(--indigo));color:var(--on-indigo);-webkit-mask:radial-gradient(circle at 0 0,#0000 var(--c),#000 calc(var(--c) + .5px)) top left,radial-gradient(circle at 100% 0,#0000 var(--c),#000 calc(var(--c) + .5px)) top right,radial-gradient(circle at 0 100%,#0000 var(--c),#000 calc(var(--c) + .5px)) bottom left,radial-gradient(circle at 100% 100%,#0000 var(--c),#000 calc(var(--c) + .5px)) bottom right;-webkit-mask-size:51% 51%;-webkit-mask-repeat:no-repeat;mask:radial-gradient(circle at 0 0,#0000 var(--c),#000 calc(var(--c) + .5px)) top left,radial-gradient(circle at 100% 0,#0000 var(--c),#000 calc(var(--c) + .5px)) top right,radial-gradient(circle at 0 100%,#0000 var(--c),#000 calc(var(--c) + .5px)) bottom left,radial-gradient(circle at 100% 100%,#0000 var(--c),#000 calc(var(--c) + .5px)) bottom right;mask-size:51% 51%;mask-repeat:no-repeat}
+.projects{display:grid;gap:clamp(1.6rem,4vw,2.6rem);padding-bottom:clamp(4rem,8vw,6rem)}
+.proj{padding:clamp(2.2rem,5vw,3.4rem) clamp(1.4rem,5vw,3.6rem);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.proj[hidden]{display:none}
+@media (max-width:820px){.proj{grid-template-columns:1fr}.proj .shot{order:-1}}
+.proj .ttl{font-family:var(--display);font-size:clamp(1.6rem,1.3rem + 1.2vw,2.3rem);font-weight:500}
+.proj .ttl small{font-family:var(--display);font-weight:400;font-style:italic;font-size:.75em;color:var(--on-indigo-soft)}
+.proj .one{font-family:var(--display);font-style:italic;font-size:clamp(1.25rem,1.1rem + .6vw,1.55rem);line-height:1.3;margin-top:.9rem;color:var(--on-indigo)}
+.proj .tags{margin-top:.9rem;font-family:var(--display);font-style:italic;color:var(--on-indigo-soft);font-size:1.1rem}
+.proj .tags span+span::before{content:" • "}
+.pid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem 1.6rem;margin-top:1.8rem}
+.pid h4{font-family:var(--body);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--on-indigo-soft)}
+.pid p{font-size:.98rem;line-height:1.5;margin-top:.25rem;color:var(--on-indigo)}
+@media (max-width:520px){.pid{grid-template-columns:1fr}}
+.shot{position:relative;border:6px solid var(--cloth);border-radius:6px;overflow:hidden;background:var(--cloth);transform:rotate(1.2deg);box-shadow:0 18px 30px rgba(0,0,0,.25);aspect-ratio:4/3}
+.proj:nth-child(even) .shot{transform:rotate(-1.2deg)}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot.contain img{object-fit:contain;background:#fff;padding:.6rem}
+.shot.word{display:grid;place-content:center;text-align:center;background:var(--indigo-2);border-color:var(--on-indigo)}
+.shot.word b{font-family:var(--display);font-weight:300;font-size:clamp(2.4rem,1.6rem + 3vw,3.8rem);line-height:1;color:var(--on-indigo)}
+.shot.word span{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-indigo-soft);margin-top:.6rem}
+.go{grid-column:1/-1;display:flex;justify-content:flex-start}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--display);font-size:1.2rem;padding:.55rem 1.4rem;border-radius:999px;border:1.3px solid currentColor;background:transparent;cursor:pointer;text-decoration:none;transition:background .2s,color .2s}
+.proj .btn:hover{background:var(--on-indigo);color:var(--indigo)}
+
+/* home closing */
+.closing{text-align:center;padding-block:clamp(3rem,7vw,5rem) clamp(4rem,8vw,6rem);display:grid;justify-items:center;gap:1rem}
+.closing h2{font-size:clamp(2.2rem,1.6rem + 2.6vw,3.6rem);color:var(--indigo);font-style:italic}
+.closing .row{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.6rem;color:var(--soft)}
+.closing .row span{user-select:all}
+.closing .btns{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;color:var(--indigo)}
+.closing .btn:hover{background:var(--indigo);color:var(--on-indigo)}
+footer{text-align:center;padding-block:1.5rem 2.5rem;color:var(--soft);font-size:.9rem}
+
+/* ---------- ABOUT (opens from the bubble) ---------- */
+.about{background:var(--indigo);color:var(--on-indigo);margin-inline:calc(-1 * clamp(16px,4vw,40px));padding-inline:clamp(16px,4vw,40px);padding-block:7rem 5rem;min-height:100svh;background-image:radial-gradient(rgba(243,238,227,.06) 1px,transparent 1.2px);background-size:22px 22px}
+.about .wrap{display:grid;gap:clamp(3.5rem,8vw,6rem)}
+.me{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(1.5rem,5vw,4rem);align-items:center}
+@media (max-width:820px){.me{grid-template-columns:1fr}}
+.me .pic{position:relative;max-width:22rem;margin-inline:auto;width:100%}
+.me .pic .win{--c:28px;background:var(--cloth);padding:1.4rem 1.2rem 0;display:flex;align-items:flex-end}
+.me .pic img{width:100%;display:block}
+.me .pic .stamp{color:var(--on-indigo);width:4.5rem;right:-1.4rem;top:-1.4rem}
+.eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-indigo-soft)}
+.me h1{font-size:clamp(2.8rem,2rem + 3.5vw,4.8rem);font-weight:300;margin-top:.6rem}
+.me h1 em{font-style:italic}
+.me .story{display:grid;gap:1rem;margin-top:1.4rem;max-width:38rem;color:var(--on-indigo);font-size:1.05rem}
+.me .story b{font-weight:500;color:#fff}
+.now{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;border:1px solid rgba(243,238,227,.3);border-radius:999px;padding:.45rem 1rem;font-size:.92rem}
+.now i{width:8px;height:8px;border-radius:50%;background:#7FD1A8;box-shadow:0 0 0 4px rgba(127,209,168,.2)}
+.motto-line{font-family:var(--display);font-style:italic;font-size:clamp(1.6rem,1.2rem + 1.8vw,2.6rem);line-height:1.2;text-align:center;max-width:46rem;margin-inline:auto}
+.motto-line small{display:block;font-family:var(--body);font-style:normal;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-indigo-soft);margin-top:.8rem}
+.sec-t{font-size:clamp(2rem,1.5rem + 2vw,3rem);font-style:italic;text-align:center}
+.sec-s{text-align:center;color:var(--on-indigo-soft);margin-top:.5rem}
+.values{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem;margin-top:2rem}
+@media (max-width:980px){.values{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:600px){.values{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.val{background:var(--cloth);color:var(--ink);padding:1.3rem 1.1rem 1.2rem;--c:18px;display:grid;gap:.5rem;align-content:start;text-align:left;border:0;cursor:default}
+.val svg{width:2.4rem;height:2.4rem;color:var(--indigo)}
+.val h3{font-size:1.55rem;font-weight:500;color:var(--indigo);line-height:1.05}
+.val p{font-size:.92rem;color:var(--soft);line-height:1.45}
+.pe{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;margin-top:2rem}
+@media (max-width:700px){.pe{grid-template-columns:1fr}}
+.pe article{border:1px solid rgba(243,238,227,.25);border-radius:22px;padding:1.4rem 1.5rem;display:grid;gap:.8rem;align-content:start}
+.pe h3{font-size:1.9rem;font-style:italic}
+.pe .q{font-size:.85rem;color:var(--on-indigo-soft)}
+.pe ul{margin:0;padding:0;list-style:none;display:grid;gap:.55rem}
+.pe li{display:grid;grid-template-columns:1.1rem minmax(0,1fr);gap:.6rem;align-items:start}
+.pe li::before{content:"◆";color:var(--rust);font-size:.7rem;padding-top:.35rem}
+.pe li b{font-weight:500}
+.pe li span{display:block;color:var(--on-indigo-soft);font-size:.92rem}
+.inquiry{text-align:center;display:grid;justify-items:center;gap:1rem}
+.inquiry q{font-family:var(--display);font-size:clamp(1.7rem,1.3rem + 2vw,2.8rem);line-height:1.2;max-width:50rem}
+.inquiry p{max-width:44rem;color:var(--on-indigo-soft)}
+.trail{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,4vw,3rem);margin-top:2.2rem;align-items:start}
+.trail svg.path{position:absolute;left:0;top:30%;width:100%;height:40%;color:var(--on-indigo-soft);pointer-events:none}
+.trail figure{margin:0;position:relative;display:grid;gap:.6rem;justify-items:center}
+.trail figure:nth-child(3){margin-top:3rem}
+.trail .win{--c:22px;background:var(--cloth);padding:.6rem;width:100%;max-width:18rem}
+.trail img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.trail figcaption{text-align:center;font-size:.92rem;color:var(--on-indigo-soft)}
+.trail figcaption b{display:block;font-family:var(--display);font-size:1.4rem;color:var(--on-indigo);font-weight:500}
+@media (max-width:700px){.trail{grid-template-columns:1fr}.trail figure:nth-child(3){margin-top:0}.trail svg.path{display:none}}
+.cv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem}
+@media (max-width:700px){.cv{grid-template-columns:1fr}}
+.cv h3{font-size:1.8rem;font-style:italic;margin-bottom:.8rem}
+.cv ol{list-style:none;margin:0;padding:0;display:grid}
+.cv li{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:1rem;padding-block:.8rem;border-top:1px dashed rgba(243,238,227,.25)}
+.cv .when{font-size:.85rem;color:var(--on-indigo-soft);font-variant-numeric:tabular-nums;padding-top:.15rem}
+.cv b{font-weight:500}
+.cv p{font-size:.92rem;color:var(--on-indigo-soft)}
+@media (max-width:460px){.cv li{grid-template-columns:1fr;gap:.1rem}}
+
+/* expanding circle transition */
+.wipe{position:fixed;inset:0;z-index:60;background:var(--indigo);pointer-events:none;clip-path:circle(0px at 50% 50%);transition:clip-path .7s cubic-bezier(.7,0,.2,1)}
+
+/* ---------- FUNSIES ---------- */
+.funsies{padding-block:8rem 4rem;display:grid;gap:clamp(4rem,9vw,6rem)}
+.facts{text-align:center;display:grid;justify-items:center;gap:1.2rem}
+.facts .k{color:var(--soft)}
+.facts blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:clamp(1.8rem,1.3rem + 2.4vw,3.2rem);line-height:1.15;color:var(--indigo);max-width:46rem;min-height:2.4em;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em;text-decoration-color:var(--line)}
+.facts cite{font-style:normal;color:var(--soft)}
+.shuffle{width:3.2rem;height:3.2rem;border-radius:14px;border:0;background:var(--indigo);color:var(--on-indigo);cursor:pointer;display:grid;place-content:center}
+.shuffle:hover{background:var(--rust)}
+.leave{background:var(--indigo);color:var(--on-indigo);margin-inline:calc(-1 * clamp(16px,4vw,40px));padding:clamp(3rem,7vw,5rem) clamp(16px,4vw,40px);text-align:center}
+.leave h2{font-size:clamp(2.2rem,1.6rem + 2.8vw,3.8rem);font-style:italic}
+.leave p{color:var(--on-indigo-soft);margin-top:.6rem}
+.leave p i{font-family:var(--display);font-size:1.15em;color:var(--on-indigo)}
+.boards{max-width:var(--wrap);margin:2.4rem auto 0;border:1.5px solid var(--on-indigo);border-radius:6px;padding:clamp(1.2rem,4vw,2.6rem);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,4vw,3rem);align-items:end}
+@media (max-width:700px){.boards{grid-template-columns:1fr}}
+.board{display:grid;gap:.6rem;justify-items:center}
+.board .can{width:100%;max-width:15rem;aspect-ratio:3/4;background:var(--cloth);position:relative;touch-action:none;cursor:crosshair}
+.board.sole .can{aspect-ratio:100/220;max-width:9.5rem;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 220'%3E%3Cpath d='M52 3C80 5 95 32 93 70c-2 30-14 46-15 68-1 26 10 44 6 62-3 13-17 17-33 17s-30-4-33-17c-4-18 6-36 5-62-1-22-14-38-16-68C5 30 22 1 52 3z'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 220'%3E%3Cpath d='M52 3C80 5 95 32 93 70c-2 30-14 46-15 68-1 26 10 44 6 62-3 13-17 17-33 17s-30-4-33-17c-4-18 6-36 5-62-1-22-14-38-16-68C5 30 22 1 52 3z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.board.win .can{--c:26px}
+.board.round .can{border-radius:50%;aspect-ratio:1}
+.board canvas{width:100%;height:100%;display:block}
+.board span{font-size:.85rem;color:var(--on-indigo-soft)}
+.clear{margin-top:1.6rem;color:var(--on-indigo)}
+.clear:hover{background:var(--on-indigo);color:var(--indigo)}
+.neuro-link{text-align:center;display:grid;justify-items:center;gap:.8rem}
+.neuro-link h2{font-size:clamp(2rem,1.5rem + 2vw,3rem);color:var(--indigo);font-style:italic}
+.neuro-link p{max-width:36rem;color:var(--soft)}
+.neuro-link .btn{color:var(--indigo)}
+.neuro-link .btn:hover{background:var(--indigo);color:var(--on-indigo)}
+
+/* motifs drift gently */
+@keyframes sway{0%,100%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(14px,-10px) rotate(7deg)}66%{transform:translate(-10px,6px) rotate(-4deg)}}
+@keyframes sway2{0%,100%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(-14px,8px) rotate(-8deg)}66%{transform:translate(10px,-6px) rotate(5deg)}}
+.hero .stamp{animation:sway 7s ease-in-out infinite}
+.hero .st2,.hero .st4,.hero .st6{animation-name:sway2;animation-duration:8.5s}
+.hero .st3{animation-duration:9s;animation-delay:-2s}.hero .st5{animation-duration:6s;animation-delay:-1s}
+/* category colours */
+.proj{--panel:var(--indigo);background:var(--panel);transition:background .45s}
+.proj[data-main="service"]{--panel:#1F4B43}
+.proj[data-main="ux"]{--panel:#7A2F27}
+.projects[data-f="research"] .proj{--panel:var(--indigo)}
+.projects[data-f="service"] .proj{--panel:#1F4B43}
+.projects[data-f="ux"] .proj{--panel:#7A2F27}
+.pill i{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;margin-right:.45rem;vertical-align:middle}
+.showing{margin-top:.4rem;font-size:.95rem;color:var(--soft);min-height:1.5em}
+.showing b{color:var(--ink);font-weight:600}
+@keyframes rise{from{opacity:.25;transform:translateY(14px)}to{opacity:1;transform:none}}
+.proj.in{animation:rise .5s ease-out both}
+/* process pop-up */
+.pop{position:fixed;right:clamp(12px,3vw,28px);bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:55;width:min(20rem,calc(100vw - 24px));background:var(--cloth);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:1rem 1.1rem 1.1rem;box-shadow:0 18px 40px rgba(30,32,48,.22);display:grid;gap:.6rem;transform:translateY(0);transition:transform .35s,opacity .35s}
+.pop.hide{transform:translateY(130%);opacity:0;pointer-events:none}
+.pop b{font-family:var(--display);font-size:1.35rem;font-weight:500;color:var(--indigo);line-height:1.15;padding-right:1.5rem}
+.pop p{font-size:.9rem;color:var(--soft)}
+.pop .x{position:absolute;top:.5rem;right:.6rem;border:0;background:none;font-size:1.2rem;cursor:pointer;color:var(--soft);width:2rem;height:2rem}
+.pop a{justify-self:start;color:var(--cloth);background:var(--indigo);border-color:var(--indigo)}
+.pop a:hover{background:var(--rust);border-color:var(--rust)}
+.process{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;margin-top:clamp(2.5rem,6vw,4rem);--c:24px;background:var(--indigo);color:var(--on-indigo);padding:1.6rem clamp(1.2rem,4vw,2.4rem)}
+.process b{font-family:var(--display);font-size:clamp(1.4rem,1.2rem + 1vw,1.9rem);font-weight:400;font-style:italic}
+.process .btn{color:var(--on-indigo)}
+.process .btn:hover{background:var(--on-indigo);color:var(--indigo)}
+.flink{font-size:.88rem;color:var(--indigo);margin-left:.3rem;white-space:nowrap}
+/* niche circle in case study */
+.niche{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.2rem,4vw,2.6rem);align-items:center;border:1px solid var(--line);border-radius:24px;padding:clamp(1.2rem,4vw,2.2rem);background:rgba(255,255,255,.45)}
+@media (max-width:760px){.niche{grid-template-columns:1fr}}
+.rings{position:relative;width:100%;max-width:22rem;aspect-ratio:1;margin-inline:auto}
+.ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:1.5px dashed var(--line);display:flex;justify-content:center;transition:background .4s,border-color .4s}
+.ring span{font-size:.72rem;background:var(--cloth);color:var(--soft);padding:.15rem .55rem;border-radius:999px;margin-top:.5rem;max-width:78%;text-align:center;line-height:1.3;height:max-content;transition:background .4s,color .4s}
+.ring.on{border-style:solid;border-color:var(--indigo);background:rgba(38,48,94,.07)}
+.ring.on span{background:var(--indigo);color:var(--on-indigo)}
+.r1{width:30%;height:30%;align-items:center}.r1 span{margin-top:0}
+.r2{width:54%;height:54%}.r3{width:78%;height:78%}.r4{width:100%;height:100%}
+.niche h3{font-size:clamp(1.5rem,1.2rem + 1vw,2rem);color:var(--indigo)}
+.niche .step{margin-top:.7rem;min-height:6.5em;color:var(--ink)}
+.ndots{display:flex;gap:.4rem;margin:.6rem 0 1rem}
+.ndots i{width:.55rem;height:.55rem;border-radius:50%;background:var(--line)}
+.ndots i.on{background:var(--rust)}
+.niche .btn{color:var(--indigo)}
+.niche .btn:hover{background:var(--indigo);color:var(--on-indigo)}
+/* contact list */
+.contact-list{display:grid;gap:.1rem;width:min(100%,34rem);text-align:left}
+.contact-list div{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-block:.65rem;border-bottom:1px dashed var(--line)}
+.contact-list span:first-child{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);padding-top:.2rem}
+.contact-list .v{user-select:all;overflow-wrap:anywhere;text-align:right}
+.about .contact-list div{border-color:rgba(243,238,227,.25)}
+.about .contact-list span:first-child{color:var(--on-indigo-soft)}
+.about-back{background:none;border:1px solid rgba(243,238,227,.35);color:var(--on-indigo);border-radius:999px;padding:.45rem 1.1rem;cursor:pointer;font-size:.95rem;justify-self:start}
+.about-back:hover{background:var(--on-indigo);color:var(--indigo)}
+
+
+/* reading progress */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--rust);z-index:70;transition:width .1s linear}
+.progress[hidden]{display:none}
+/* 30-second read */
+.tldr{margin-top:1.6rem;display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(255,255,255,.55)}
+.tldr .tag{writing-mode:vertical-rl;transform:rotate(180deg);background:var(--indigo);color:var(--on-indigo);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;padding:1rem .55rem;text-align:center}
+.tldr div:not(.tag){padding:1.1rem 1.2rem;display:grid;gap:.35rem;align-content:start;border-left:1px solid var(--line)}
+.tldr h4{font-family:var(--body);font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.tldr p{font-size:.98rem;line-height:1.45}
+@media (max-width:760px){.tldr{grid-template-columns:1fr}.tldr .tag{writing-mode:horizontal-tb;transform:none;padding:.5rem}.tldr div:not(.tag){border-left:0;border-top:1px solid var(--line)}}
+/* a moment that stayed */
+.moment{position:relative;margin-top:clamp(3rem,7vw,5rem);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1rem,3vw,2rem);align-items:center;padding:clamp(1.6rem,4vw,2.6rem);--c:28px;background:var(--panel,var(--indigo));color:var(--on-indigo)}
+.moment svg{width:clamp(3.5rem,8vw,5.5rem);height:auto;color:var(--on-indigo);animation:sway 9s ease-in-out infinite}
+.moment .k{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-indigo-soft)}
+.moment blockquote{margin:.4rem 0 0;font-family:var(--display);font-style:italic;font-size:clamp(1.5rem,1.2rem + 1.6vw,2.4rem);line-height:1.25}
+.moment p{margin-top:.6rem;color:var(--on-indigo-soft);font-size:.95rem}
+@media (max-width:600px){.moment{grid-template-columns:1fr}}
+/* learnings */
+.learn{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+@media (max-width:760px){.learn{grid-template-columns:1fr}}
+.learn div{position:relative;background:var(--cloth);border:1px solid var(--line);border-radius:18px;padding:2.2rem 1.2rem 1.2rem;display:grid;gap:.35rem;align-content:start;transition:transform .25s,box-shadow .25s}
+.learn div:hover{transform:translateY(-4px) rotate(-.6deg);box-shadow:0 14px 28px rgba(30,32,48,.1)}
+.learn div::before{content:attr(data-n);position:absolute;top:.8rem;left:1.2rem;font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--rust)}
+.learn b{font-family:var(--display);font-size:1.35rem;font-weight:500;line-height:1.15;color:var(--indigo)}
+.learn p{font-size:.95rem;color:var(--soft);line-height:1.45}
+/* project shots come alive on hover */
+.proj .shot{transition:transform .35s ease}
+.proj:hover .shot{transform:rotate(0deg) scale(1.03)}
+.proj .btn{gap:.5rem}
+.proj .btn span{transition:transform .25s}
+.proj .btn:hover span{transform:translateX(4px)}
+/* site case: system */
+.swatches{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.8rem}
+@media (max-width:760px){.swatches{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sw{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.sw i{display:block;height:5.5rem}
+.sw div{padding:.6rem .8rem;display:grid;gap:.1rem}
+.sw b{font-weight:600;font-size:.95rem}
+.sw span{font-size:.82rem;color:var(--soft);font-variant-numeric:tabular-nums}
+.specimen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+@media (max-width:760px){.specimen{grid-template-columns:1fr}}
+.specimen div{border:1px solid var(--line);border-radius:18px;padding:1.2rem;background:rgba(255,255,255,.5);display:grid;gap:.4rem;align-content:start}
+.specimen .big{font-size:3rem;line-height:1;color:var(--indigo)}
+.specimen span{font-size:.85rem;color:var(--soft)}
+.motifs{display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center;color:var(--indigo)}
+.motifs svg{width:4.5rem;height:4.5rem}
+.iter{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:2px dashed var(--line);margin-left:.6rem}
+.iter li{position:relative;padding:0 0 1.4rem 1.6rem}
+.iter li::before{content:"";position:absolute;left:-.55rem;top:.35rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--cloth);border:2px solid var(--rust)}
+.iter li:last-child::before{background:var(--rust)}
+.iter b{display:block;font-family:var(--display);font-size:1.4rem;font-weight:500;color:var(--indigo)}
+.iter p{color:var(--soft);font-size:.98rem}
+
+/* UX before UI note */
+.filters{position:relative}
+.uxnote{position:absolute;left:0;right:0;margin-inline:auto;top:calc(100% + 14px);transform:translateY(8px) scale(.96);visibility:hidden;opacity:0;pointer-events:none;z-index:6;background:var(--indigo);color:var(--on-indigo);border-radius:18px;padding:.8rem 1.1rem .9rem;box-shadow:0 14px 30px rgba(38,48,94,.25);width:min(21rem,100%);text-align:left;transition:opacity .3s,transform .3s,visibility .3s}
+.uxnote.show{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.uxnote::before{content:"";position:absolute;top:-7px;left:50%;width:14px;height:14px;background:var(--indigo);transform:translateX(-50%) rotate(45deg);border-radius:2px}
+.uxnote b{display:block;font-family:var(--display);font-size:1.35rem;font-weight:500;line-height:1.15}
+.uxnote span{display:block;font-size:.9rem;color:var(--on-indigo-soft);margin-top:.25rem}
+.uxnote .flip{display:inline-flex;gap:.35rem;align-items:center;margin-top:.55rem;font-size:.8rem;color:var(--on-indigo)}
+.uxnote .flip i{font-style:normal;padding:.1rem .45rem;border-radius:999px;background:rgba(243,238,227,.14)}
+.uxnote .flip i:first-child{background:var(--rust)}
+/* India context */
+.ctx{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+@media (max-width:640px){.ctx{grid-template-columns:1fr}}
+.ctx div{display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:.8rem;align-items:start;background:var(--cloth);border:1px solid var(--line);border-radius:16px;padding:1rem;transition:transform .25s,border-color .25s}
+.ctx div:hover{transform:translateY(-3px);border-color:var(--rust)}
+.ctx svg{width:2.2rem;height:2.2rem;color:var(--indigo)}
+.ctx b{display:block;font-family:var(--display);font-size:1.3rem;font-weight:500;color:var(--indigo);line-height:1.1}
+.ctx p{font-size:.93rem;color:var(--soft);line-height:1.45;margin-top:.2rem}
+/* video */
+.gist{margin-top:1.6rem;--c:26px;background:var(--indigo);padding:clamp(.8rem,2vw,1.2rem);display:grid;gap:.7rem}
+.gist video{width:100%;display:block;border-radius:6px;background:#000;aspect-ratio:16/9}
+.gist p{color:var(--on-indigo-soft);font-size:.9rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.gist p b{color:var(--on-indigo);font-family:var(--display);font-size:1.2rem;font-weight:500}
+
+.strips{display:grid;gap:1rem}
+.strips figure img{border-radius:8px;background:#fff}
+.flip{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.4rem .2rem 1rem;-webkit-overflow-scrolling:touch}
+.flip figure{flex:0 0 min(78%,26rem);scroll-snap-align:start}
+.flip figure img{aspect-ratio:3/2;object-fit:cover;border-radius:12px;box-shadow:0 10px 22px rgba(30,32,48,.12)}
+.flip-hint{font-size:.88rem;color:var(--soft);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+.pitch{font-family:var(--display);font-style:italic;font-size:clamp(1.25rem,1.05rem + .9vw,1.75rem);line-height:1.3;color:var(--ink);max-width:38rem;margin-top:1.2rem;text-wrap:balance}
+.open{display:inline-flex;align-items:center;gap:.55rem;margin-top:.9rem;font-size:.88rem;color:var(--soft);border:1px solid var(--line);border-radius:999px;padding:.35rem .9rem;background:rgba(255,255,255,.5)}
+.open i{width:8px;height:8px;border-radius:50%;background:#3E9B6E;box-shadow:0 0 0 4px rgba(62,155,110,.18)}
+/* feedback */
+.fb{margin-top:clamp(1rem,3vw,2rem);--c:34px;background:var(--indigo);color:var(--on-indigo);padding:clamp(2rem,5vw,3.4rem) clamp(1.2rem,5vw,3.6rem);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.5rem,4vw,3rem);align-items:start}
+@media (max-width:820px){.fb{grid-template-columns:1fr}}
+.fb h2{font-size:clamp(2.2rem,1.6rem + 2.6vw,3.6rem);font-style:italic}
+.fb .intro p{color:var(--on-indigo-soft);margin-top:.8rem;max-width:26rem}
+.fb .intro svg{width:4rem;height:4rem;color:var(--on-indigo);margin-bottom:1rem;animation:sway 9s ease-in-out infinite}
+.fb form{display:grid;gap:1rem}
+.fb label{display:grid;gap:.35rem;font-size:.85rem;letter-spacing:.04em;color:var(--on-indigo-soft)}
+.fb input[type=text],.fb textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--cloth);border:1px solid transparent;border-radius:12px;padding:.7rem .9rem;width:100%}
+.fb textarea{min-height:5.5rem;resize:vertical}
+.fb input:focus,.fb textarea:focus{outline:2px solid var(--rust);outline-offset:1px}
+.fb .two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media (max-width:520px){.fb .two{grid-template-columns:1fr}}
+.rate{border:0;margin:0;padding:0;display:grid;gap:.4rem}
+.rate legend{font-size:.85rem;letter-spacing:.04em;color:var(--on-indigo-soft);padding:0;margin-bottom:.35rem}
+.rate .stars{display:flex;gap:.35rem;flex-direction:row-reverse;justify-content:flex-end}
+.rate input{position:absolute;opacity:0;width:1px;height:1px}
+.fb .rate label{display:block;cursor:pointer;width:2.6rem;height:2.6rem;color:rgba(243,238,227,.38);transition:color .15s,transform .15s}
+.fb .rate label svg{color:rgba(243,238,227,.4)}
+.fb .rate label:hover svg,.fb .rate label:hover ~ label svg,.fb .rate input:checked ~ label svg{color:#E07A4F}
+.fb .rate label:hover{transform:scale(1.12) rotate(8deg)}
+.rate label svg{width:100%;height:100%}
+.fb .rate label:hover,.fb .rate label:hover ~ label,.fb .rate input:checked ~ label{color:#E07A4F}
+.rate input:focus-visible + label{outline:2px solid var(--on-indigo);outline-offset:2px;border-radius:50%}
+.rate .say{font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--on-indigo);min-height:1.4em}
+.check{display:flex!important;grid-template-columns:none;align-items:center;gap:.6rem!important;font-size:.9rem!important}
+.check input{width:1.1rem;height:1.1rem;accent-color:var(--rust)}
+.fb .send{justify-self:start;color:var(--indigo);background:var(--cloth);border-color:var(--cloth)}
+.fb .send:hover{background:var(--rust);border-color:var(--rust);color:#fff}
+.fb .msg{font-size:.95rem;min-height:1.4em}
+.fb .msg.ok{color:#BFE6CF}.fb .msg.err{color:#FFC7B5}
+.hp{position:absolute;left:-9999px}
+
+.mininote{margin-top:clamp(2rem,5vw,3rem);display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;border:1.5px dashed var(--line);border-radius:18px;padding:.9rem 1.1rem;background:rgba(255,255,255,.45)}
+.mininote svg{width:1.8rem;height:1.8rem;color:var(--rust);flex:none}
+.mininote p{flex:1 1 12rem;font-family:var(--display);font-style:italic;font-size:1.2rem;color:var(--indigo)}
+.mininote p b{font-weight:500}
+.mininote .btn{color:var(--indigo);font-size:1.05rem;padding:.4rem 1.1rem}
+.mininote .btn:hover{background:var(--indigo);color:var(--on-indigo)}
+#note-dlg{border:0;padding:0;background:transparent;width:min(28rem,calc(100vw - 32px));max-width:none}
+#note-dlg::backdrop{background:rgba(20,22,40,.55)}
+#note-dlg .box{background:var(--cloth);color:var(--ink);border-radius:22px;padding:1.4rem 1.4rem 1.2rem;display:grid;gap:.8rem;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+#note-dlg h3{font-size:1.7rem;font-style:italic;color:var(--indigo);padding-right:2rem}
+#note-dlg .x{position:absolute;top:.8rem;right:.8rem;line-height:1;padding:0;color:var(--soft);background:none;border:0;font-size:1.4rem;cursor:pointer;color:var(--soft);width:2rem;height:2rem}
+#note-dlg form{display:grid;gap:.7rem;position:static;text-align:left;margin:0}
+#note-dlg .box{position:relative}
+#note-dlg label{display:grid;gap:.3rem;font-size:.85rem;color:var(--soft)}
+#note-dlg textarea,#note-dlg input[type=text]{font:inherit;font-size:1rem;border:1px solid var(--line);background:#fff;border-radius:12px;padding:.65rem .8rem;width:100%;color:var(--ink)}
+#note-dlg textarea{min-height:6rem;resize:vertical}
+#note-dlg .row{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+#note-dlg .send{background:var(--indigo);color:var(--on-indigo);border-color:var(--indigo)}
+#note-dlg .send:hover{background:var(--rust);border-color:var(--rust)}
+#note-dlg .msg{font-size:.9rem;min-height:1.3em}
+#note-dlg .msg.ok{color:#2F7A55}#note-dlg .msg.err{color:var(--rust)}
+/* ---------- CASE STUDY ---------- */
+.case{padding-block:7rem 3rem}
+.crumb{background:none;border:0;padding:0;cursor:pointer;color:var(--soft);font-size:.95rem}
+.crumb:hover{color:var(--indigo)}
+.case-hero{display:grid;gap:1rem;margin-top:1.4rem}
+.case-hero .k{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)}
+.case-hero h1{font-size:clamp(3rem,2rem + 5vw,6rem);font-weight:300;color:var(--indigo);line-height:.95}
+.case-hero .lede{font-family:var(--display);font-style:italic;font-size:clamp(1.4rem,1.2rem + 1vw,2rem);line-height:1.3;max-width:48rem}
+.facts-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1rem;margin-top:1.6rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:1rem}
+.facts-row div{display:grid;gap:.15rem}
+.facts-row dt{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.facts-row dd{margin:0;font-size:.95rem;line-height:1.4}
+
+.cover{margin-top:2.2rem;--c:30px;background:var(--indigo);padding:clamp(.8rem,2vw,1.4rem)}
+.cover img{width:100%;display:block;max-height:34rem;object-fit:cover;background:#fff}
+.cs{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:1rem 3rem;margin-top:clamp(3rem,7vw,5rem)}
+@media (max-width:760px){.cs{grid-template-columns:1fr}}
+.cs > h2{font-size:clamp(1.8rem,1.4rem + 1.4vw,2.5rem);font-style:italic;color:var(--indigo)}
+.cs .body{display:grid;gap:1.1rem;max-width:44rem;min-width:0}
+.cs .body > p{font-size:1.05rem}
+.why .body > p:first-child{font-family:var(--display);font-size:clamp(1.3rem,1.15rem + .6vw,1.6rem);line-height:1.35;color:var(--indigo)}
+.role{margin-top:.4rem;padding:.8rem 1rem;border-radius:12px;background:rgba(38,48,94,.06);font-size:.95rem!important}
+.hmw{display:grid;gap:.8rem}
+.hmw p{font-family:var(--display);font-style:italic;font-size:1.4rem;line-height:1.3;padding:.9rem 1.2rem;border-left:3px solid var(--rust);background:rgba(38,48,94,.05)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:1rem;counter-reset:s}
+.steps li{display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:1rem}
+.steps li::before{counter-increment:s;content:counter(s);font-family:var(--display);font-size:1.8rem;line-height:1;color:var(--rust)}
+.steps b{font-weight:600;display:block}
+.steps p{color:var(--soft);font-size:.98rem}
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+@media (max-width:760px){.cards3{grid-template-columns:1fr}}
+.cards3 div{--c:16px;background:var(--indigo);color:var(--on-indigo);padding:1.2rem 1.2rem 1.3rem;display:grid;gap:.4rem;align-content:start}
+.cards3 strong{font-family:var(--display);font-weight:500;font-size:1.9rem;line-height:1}
+.cards3 p{font-size:.95rem;line-height:1.45;color:var(--on-indigo)}
+.lines{font-family:var(--display);font-style:italic;font-size:clamp(1.4rem,1.2rem + 1vw,1.9rem);color:var(--indigo);display:grid;gap:.1rem;line-height:1.25}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.gallery.one{grid-template-columns:1fr}
+.gallery.photos{grid-template-columns:repeat(3,minmax(0,1fr))}.gallery.photos img{aspect-ratio:4/3;object-fit:cover}
+@media (max-width:700px){.gallery.photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.gallery{grid-template-columns:1fr}}
+figure{margin:0;display:grid;gap:.45rem}
+figure button{padding:0;border:0;background:none;cursor:zoom-in;display:block;width:100%}
+figure img{width:100%;display:block;border-radius:6px;border:1px solid var(--line);background:#fff}
+figcaption{font-size:.88rem;color:var(--soft)}
+.concepts{display:grid;gap:clamp(2.5rem,6vw,4rem);margin-top:2rem}
+.concept{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(1.2rem,4vw,3rem);align-items:center}
+.concept:nth-child(even) figure{order:2}
+.concept figure img{background:#fff;border-radius:16px;padding:1rem}
+.concept .k{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)}
+.concept h3{font-size:clamp(1.8rem,1.4rem + 1.4vw,2.6rem);color:var(--indigo);margin:.3rem 0 .5rem}
+.concept > div > p{font-family:var(--display);font-style:italic;font-size:1.25rem;margin-bottom:1rem}
+@media (max-width:760px){.concept{grid-template-columns:1fr}.concept:nth-child(even) figure{order:0}}
+.lives{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+@media (max-width:700px){.lives{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.lives div{border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;display:grid;gap:.15rem;background:var(--cloth)}
+.lives b{font-family:var(--display);font-size:1.3rem;font-weight:500;color:var(--indigo)}
+.lives span{font-size:.9rem;color:var(--soft);line-height:1.35}
+.wires{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+@media (max-width:600px){.wires{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.wires img{width:100%;border-radius:8px;border:1px solid var(--line);background:#fff;display:block}
+.case-next{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:clamp(3rem,7vw,5rem);padding-top:1.4rem;border-top:1px solid var(--line)}
+.case-next{align-items:center}.case-next .btn{color:var(--indigo)}.btn.sm{font-size:.98rem;padding:.35rem 1rem;opacity:.85}
+.case-next .btn:hover{background:var(--indigo);color:var(--on-indigo)}
+
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh}
+dialog::backdrop{background:rgba(20,22,40,.85)}
+dialog img{max-width:100%;max-height:86vh;display:block;border-radius:8px;background:#fff}
+dialog form{text-align:right;margin-bottom:.5rem}
+dialog button{background:var(--cloth);color:var(--indigo);border:0;border-radius:999px;padding:.45rem 1rem;cursor:pointer}
+</style>
+</head>
+<body>
+<!-- block-print motifs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="rosette" viewBox="0 0 100 100">
+      <g fill="currentColor">
+        <g id="petals"><ellipse cx="50" cy="24" rx="9" ry="20"/><ellipse cx="50" cy="76" rx="9" ry="20"/><ellipse cx="24" cy="50" rx="20" ry="9"/><ellipse cx="76" cy="50" rx="20" ry="9"/></g>
+        <g transform="rotate(45 50 50)"><ellipse cx="50" cy="27" rx="7" ry="16"/><ellipse cx="50" cy="73" rx="7" ry="16"/><ellipse cx="27" cy="50" rx="16" ry="7"/><ellipse cx="73" cy="50" rx="16" ry="7"/></g>
+      </g>
+      <circle cx="50" cy="50" r="10" fill="#F5F0E6"/><circle cx="50" cy="50" r="5" class="r" fill="currentColor"/>
+    </symbol>
+    <symbol id="buta" viewBox="0 0 100 130">
+      <path fill="currentColor" d="M52 6c26 10 40 40 34 68-6 30-30 50-52 50-16 0-26-12-24-26 2-14 16-20 28-16 10 3 14 12 10 20 8-8 12-22 8-38C52 44 40 30 30 26c10-4 16-12 22-20z"/>
+      <circle cx="38" cy="96" r="8" fill="#F5F0E6"/><circle cx="38" cy="96" r="4" fill="currentColor" class="r"/>
+      <g fill="#F5F0E6"><circle cx="66" cy="60" r="3"/><circle cx="70" cy="74" r="3"/><circle cx="64" cy="88" r="3"/></g>
+    </symbol>
+    <symbol id="sprig" viewBox="0 0 80 120">
+      <path d="M40 118V20" stroke="currentColor" stroke-width="4" fill="none"/>
+      <g fill="currentColor"><ellipse cx="26" cy="40" rx="14" ry="6" transform="rotate(-35 26 40)"/><ellipse cx="54" cy="56" rx="14" ry="6" transform="rotate(35 54 56)"/><ellipse cx="26" cy="72" rx="14" ry="6" transform="rotate(-35 26 72)"/><ellipse cx="54" cy="88" rx="14" ry="6" transform="rotate(35 54 88)"/></g>
+      <circle cx="40" cy="14" r="9" fill="currentColor" class="r"/>
+    </symbol>
+    <symbol id="dotflower" viewBox="0 0 60 60">
+      <g fill="currentColor"><circle cx="30" cy="12" r="7"/><circle cx="30" cy="48" r="7"/><circle cx="14" cy="21" r="7"/><circle cx="46" cy="21" r="7"/><circle cx="14" cy="39" r="7"/><circle cx="46" cy="39" r="7"/></g>
+      <circle cx="30" cy="30" r="6" fill="currentColor" class="r"/>
+    </symbol>
+    <pattern id="band" width="44" height="22" patternUnits="userSpaceOnUse">
+      <path d="M0 22 L11 6 L22 22 L33 6 L44 22" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="11" cy="16" r="2.2" fill="currentColor"/><circle cx="33" cy="16" r="2.2" fill="currentColor"/>
+    </pattern>
+  </defs>
+</svg>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <button class="logo" type="button" data-go="home" aria-label="Home"><svg class="m" viewBox="0 0 100 100"><use href="#rosette"/></svg></button>
+  <a href="#work" data-go="home" data-nav="work">Work</a>
+  <a href="#about" data-go="about" data-nav="about">About</a>
+  <a href="#funsies" data-go="funsies" data-nav="funsies">Funsies</a>
+</nav>
+<div class="wipe" id="wipe" aria-hidden="true"></div>
+<div class="progress" id="progress" hidden aria-hidden="true"></div>
+
+<!-- ================= HOME ================= -->
+<main class="view" id="v-home">
+  <section class="hero" aria-label="Introduction">
+    <svg class="border-band" aria-hidden="true"><rect width="100%" height="22" fill="url(#band)"/></svg>
+    <svg class="stamp st1" viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg>
+    <svg class="stamp st2" viewBox="0 0 100 130" aria-hidden="true"><use href="#buta"/></svg>
+    <svg class="stamp st3" viewBox="0 0 80 120" aria-hidden="true"><use href="#sprig"/></svg>
+    <svg class="stamp st4" viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg>
+    <svg class="stamp st5" viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg>
+    <svg class="stamp st6" viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg>
+    <div class="hero-inner">
+      <p class="hi">Hi, this is</p>
+      <h1 class="name">Ishi<span class="deva">ता</span></h1>
+      <p class="pitch">I design services and products that keep people's dignity intact, from a prosthetic care centre in Jaipur to a hospital kitchen in Bengaluru.</p>
+      <div class="portrait"><img src="img/ishita.png" alt="Ishita Sarin, smiling, in a blue floral dress"><button class="bubble" id="bubble" type="button" data-go="about"><b>Hi, I'm Ishita!</b><span>Tap to get to know me <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></span></button></div>
+      <p class="hero-foot"><span>Human-centred designer</span><i>·</i><span>M.Des student, Srishti Manipal</span><i>·</i><span>Computer Science engineer turned designer</span></p>
+    </div>
+  </section>
+
+  <section class="wrap" id="work" aria-labelledby="look-t">
+    <div class="look">
+      <h2 id="look-t">A Little Look</h2>
+      <p>Seven projects, from a prosthetic care centre in Jaipur to a world set in 2081. Each one started with people. Pick a lens and open any of them.</p>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="pill" id="f-all" data-f="all" aria-pressed="true" type="button">All</button>
+        <button class="pill" id="f-research" data-f="research" aria-pressed="false" type="button"><i style="background:#26305E"></i>Research</button>
+        <button class="pill" id="f-service" data-f="service" aria-pressed="false" type="button"><i style="background:#1F4B43"></i>Service Design</button>
+        <button class="pill" id="f-ux" data-f="ux" aria-pressed="false" type="button"><i style="background:#7A2F27"></i>UX/UI &amp; Product</button>
+        <div class="uxnote" id="uxnote" role="status" aria-live="polite"><b>Psst! It's UX/UI, not UI/UX.</b><span>The experience comes before the interface. First how it feels, then how it looks.</span><span class="flip"><i>UX</i>→<i>UI</i></span></div>
+      </div>
+      <p class="showing" id="showing" aria-live="polite">Showing <b>all 7 projects</b></p>
+    </div>
+
+    <div class="projects" id="projects" data-f="all">
+      <article class="proj frame" data-main="research" data-cats="research service ux">
+        <div>
+          <h3 class="ttl">Beyond the Fitting <small>• 2026</small></h3>
+          <p class="one">Why so few women reach prosthetic care in India, and what still stops them once they're fitted.</p>
+          <p class="tags"><span>Field research</span><span>Service design</span><span>Product</span></p>
+          <div class="pid">
+            <div><h4>The gap</h4><p>Out of about fifty people a day at BMVSS Jaipur Foot, we saw two or three women.</p></div>
+            <div><h4>Insight</h4><p>A service being available isn't the same as it being accessible. And a prosthesis that works can still not fit a woman's life.</p></div>
+            <div><h4>Design intent</h4><p>Bring care closer to women, and let the prosthesis fit their culture, clothes and footwear.</p></div>
+            <div><h4>Outcome</h4><p>A community-linked service model, the 3D-printed Chappal Lock, and a research paper submitted to IndiaHCI 2026.</p></div>
+          </div>
+        </div>
+        <div class="shot"><img src="img/card-dignity.jpg" alt="A lavender chappal held on with the Chappal Lock heel strap" loading="lazy"></div>
+        <div class="go"><button class="btn" type="button" data-go="dignity">Follow the chappal <span>→</span></button></div>
+      </article>
+
+      <article class="proj frame" data-main="service" data-cats="service research">
+        <div>
+          <h3 class="ttl">iAIM Hospital Diet System <small>• 2026</small></h3>
+          <p class="one">In an Ayurveda hospital, food is part of the treatment. How does every patient get the right meal?</p>
+          <p class="tags"><span>Service design</span><span>Systems mapping</span><span>Healthcare</span></p>
+          <div class="pid">
+            <div><h4>The gap</h4><p>Diets ran on a 4:30 pm cut-off, three paper copies and a WhatsApp group, and the patient guide was almost all text.</p></div>
+            <div><h4>Insight</h4><p>The kitchen worked well. The gap was in how diet instructions reached and made sense to patients.</p></div>
+            <div><h4>Design intent</h4><p>Help every patient, including those who can't read well, understand what to eat and why.</p></div>
+            <div><h4>Outcome</h4><p>A visual, multilingual patient booklet, chosen by the hospital's CRO from four ideas.</p></div>
+          </div>
+        </div>
+        <div class="shot"><img src="img/iaim-cover.jpg" alt="The entrance of I-AIM Healthcare Centre, Bengaluru" loading="lazy"></div>
+        <div class="go"><button class="btn" type="button" data-go="iaim">Follow the tiffin <span>→</span></button></div>
+      </article>
+
+      <article class="proj frame" data-main="research" data-cats="research service">
+        <div>
+          <h3 class="ttl">Community Palliative Care <small>• 2026</small></h3>
+          <p class="one">Home visits with a palliative care team in Kundapura, turned into stories the team could use.</p>
+          <p class="tags"><span>Place-based learning</span><span>Systems</span><span>Narrative artefacts</span></p>
+          <div class="pid">
+            <div><h4>The gap</h4><p>I thought palliative care meant end-of-life care, and that care systems were mostly equipment and forms.</p></div>
+            <div><h4>Insight</h4><p>Care isn't a line. The route map is geographic and emotional at once.</p></div>
+            <div><h4>Design intent</h4><p>Make the invisible parts of care visible, for the team and for outsiders.</p></div>
+            <div><h4>Outcome</h4><p>A system map and four accordion artefacts from 12 real cases, corrected by the care team.</p></div>
+          </div>
+        </div>
+        <div class="shot"><img src="img/cpc-team.jpg" alt="The community palliative care team reading our accordion artefacts" loading="lazy"></div>
+        <div class="go"><button class="btn" type="button" data-go="cpc">Open the accordion <span>→</span></button></div>
+      </article>
+
+      <article class="proj frame" data-main="ux" data-cats="ux">
+        <div>
+          <h3 class="ttl">NeuroSpace <small>• 2026</small></h3>
+          <p class="one">What happens to people when every memory is recorded, shared and sold?</p>
+          <p class="tags"><span>Speculative design</span><span>Interaction design</span><span>Code</span></p>
+          <div class="pid">
+            <div><h4>The gap</h4><p>Debates about memory tech stay abstract. People read about the risks but don't feel them.</p></div>
+            <div><h4>Insight</h4><p>My six early ideas were really one archive, entered through different senses.</p></div>
+            <div><h4>Design intent</h4><p>Let people step into nine lives and feel the consequences themselves.</p></div>
+            <div><h4>Outcome</h4><p>A coded web world, two physical artefacts and two working software prototypes, all in one future.</p></div>
+          </div>
+        </div>
+        <div class="shot"><img src="img/neuro-book-touch.jpg" alt="Ishita holding a bottle up to the camera to retrieve a memory in Memory Book" loading="lazy"></div>
+        <div class="go" style="gap:.7rem;flex-wrap:wrap"><button class="btn" type="button" data-go="neuro">Enter 2081 <span>→</span></button><a class="btn" href="https://benevolent-malabi-99261a.netlify.app" target="_blank" rel="noopener">Step into NeuroSpace ↗</a></div>
+      </article>
+
+      <article class="proj frame" data-main="ux" data-cats="ux">
+        <div>
+          <h3 class="ttl">Medicare <small>• 2025</small></h3>
+          <p class="one">Reminders that help older adults take the right medicine at the right time, without a phone.</p>
+          <p class="tags"><span>Product design</span><span>Accessibility</span><span>Healthcare</span></p>
+          <div class="pid">
+            <div><h4>The gap</h4><p>Missed doses and mixed-up medicines, especially for older adults and people with chronic illness.</p></div>
+            <div><h4>Insight</h4><p>Reminders fail when they are inconvenient, hard to access or carry a stigma.</p></div>
+            <div><h4>Design intent</h4><p>Reminders you wear or see at a glance, using vibration, light and colour.</p></div>
+            <div><h4>Outcome</h4><p>Three concepts: an interactive necklace, a dose band and MediClock+.</p></div>
+          </div>
+        </div>
+        <div class="shot contain"><img src="img/medicare-cover.jpg" alt="Coloured sketch of the MediClock+ weekly organiser" loading="lazy"></div>
+        <div class="go"><button class="btn" type="button" data-go="medicare">See how it reminds <span>→</span></button></div>
+      </article>
+
+      <article class="proj frame" data-main="ux" data-cats="ux">
+        <div>
+          <h3 class="ttl">Moonday <small>• 2022</small></h3>
+          <p class="one">A menstrual health app for women aged 10 to 55 that tracks gently and talks openly.</p>
+          <p class="tags"><span>UX/UI</span><span>App design</span><span>Women's health</span></p>
+          <div class="pid">
+            <div><h4>The gap</h4><p>Talking about periods is more open now, but care hasn't caught up, and 54% of women find remembering their cycle date hard.</p></div>
+            <div><h4>Insight</h4><p>Tracking alone isn't enough. Women also want support and openness.</p></div>
+            <div><h4>Design intent</h4><p>A warm space for tracking, wellbeing and community.</p></div>
+            <div><h4>Outcome</h4><p>A full UX case study: personas, empathy maps, journey, information architecture, site map and 19 wireframes.</p></div>
+          </div>
+        </div>
+        <div class="shot"><img src="img/moonday-hero.jpg" alt="Moonday cover: an illustrated woman with menstrual health icons" loading="lazy"></div>
+        <div class="go"><button class="btn" type="button" data-go="moonday">Open the app story <span>→</span></button></div>
+      </article>
+
+      <article class="proj frame" data-main="ux" data-cats="ux">
+        <div>
+          <h3 class="ttl">This Portfolio <small>• 2026</small></h3>
+          <p class="one">A portfolio should practise what it preaches. So I designed this one like a product.</p>
+          <p class="tags"><span>UX/UI</span><span>Design system</span><span>Visual identity</span></p>
+          <div class="pid">
+            <div><h4>The gap</h4><p>Most portfolios look alike: a grid of thumbnails and a lot of process words.</p></div>
+            <div><h4>Insight</h4><p>The way a portfolio feels is the first piece of work a reader sees.</p></div>
+            <div><h4>Design intent</h4><p>Warm, rooted in Indian craft, easy to skim, and playful where it counts.</p></div>
+            <div><h4>Outcome</h4><p>A block-print design system, six case studies, and small moments of delight.</p></div>
+          </div>
+        </div>
+        <div class="shot word"><b>Ishi<span class="deva">ता</span></b></div>
+        <div class="go"><button class="btn" type="button" data-go="site">See how I built it <span>→</span></button></div>
+      </article>
+    </div>
+  </section>
+
+
+  <section class="wrap" id="feedback" aria-labelledby="fb-t">
+    <div class="fb frame">
+      <div class="intro">
+        <svg viewBox="0 0 80 120" aria-hidden="true"><use href="#sprig"/></svg>
+        <h2 id="fb-t">Leave me a note</h2>
+        <p>I design with people, not for them, and that includes this portfolio. Tell me what worked, what didn't, or what you'd like to see more of. Every note is read.</p>
+      </div>
+      <form name="feedback" id="fb-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="feedback">
+        <p class="hp"><label>Leave this empty <input name="bot-field" id="fb-bot"></label></p>
+        <fieldset class="rate">
+          <legend>How did my portfolio feel?</legend>
+          <div class="stars"><input type="radio" id="r5" name="rating" value="5"><label for="r5" title="5 of 5"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><span class="hp">5 of 5</span></label><input type="radio" id="r4" name="rating" value="4"><label for="r4" title="4 of 5"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><span class="hp">4 of 5</span></label><input type="radio" id="r3" name="rating" value="3"><label for="r3" title="3 of 5"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><span class="hp">3 of 5</span></label><input type="radio" id="r2" name="rating" value="2"><label for="r2" title="2 of 5"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><span class="hp">2 of 5</span></label><input type="radio" id="r1" name="rating" value="1"><label for="r1" title="1 of 5"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><span class="hp">1 of 5</span></label></div>
+          <span class="say" id="fb-say" aria-live="polite"></span>
+        </fieldset>
+        <label for="fb-liked">What stayed with you?<textarea id="fb-liked" name="liked" placeholder="A project, a detail, a moment…"></textarea></label>
+        <label for="fb-better">What could be better?<textarea id="fb-better" name="better" placeholder="Be honest. That's how designs get better."></textarea></label>
+        <div class="two">
+          <label for="fb-name">Your name (optional)<input type="text" id="fb-name" name="name" autocomplete="name"></label>
+          <label for="fb-role">Role or company (optional)<input type="text" id="fb-role" name="role" autocomplete="organization-title"></label>
+        </div>
+        <label class="check" for="fb-quote"><input type="checkbox" id="fb-quote" name="quote_ok" value="yes">Ishita can quote my note on her portfolio</label>
+        <button class="btn send" type="submit" id="fb-send">Send my note →</button>
+        <p class="msg" id="fb-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="wrap closing" aria-label="Contact">
+    <svg viewBox="0 0 100 100" width="56" height="56" style="color:var(--indigo)" aria-hidden="true"><use href="#rosette"/></svg>
+    <h2>Let's design with people, not for them.</h2>
+    <div class="contact-list">
+      <div><span>Phone</span><span class="v">+91 98214 58308</span></div>
+      <div><span>Email</span><span class="v">iishitasarin2021@gmail.com</span></div>
+      <div><span>LinkedIn</span><a class="v" href="https://www.linkedin.com/in/ishita-sarin-88b346218/" target="_blank" rel="noopener">linkedin.com/in/ishita-sarin ↗</a></div>
+      <div><span>Behance</span><a class="v" href="https://www.behance.net/ishitasarin18" target="_blank" rel="noopener">behance.net/ishitasarin18 ↗</a></div>
+      <div><span>GitHub</span><a class="v" href="https://github.com/Ishita054" target="_blank" rel="noopener">github.com/Ishita054 ↗</a></div>
+    </div>
+    <div class="btns"><button class="btn" type="button" data-go="about">More about me</button><button class="btn" type="button" data-go="funsies">Funsies</button><a class="btn" href="#feedback">Leave a note</a></div>
+  </section>
+  <footer>Ishita Sarin · 2026 · Field photos taken with consent</footer>
+</main>
+
+<!-- ================= ABOUT ================= -->
+<main class="view about" id="v-about" hidden>
+  <div class="wrap">
+    <button class="about-back" type="button" data-go="home">← Back</button>
+    <section class="me">
+      <div class="pic">
+        <div class="win frame"><img src="img/ishita.png" alt="Ishita Sarin"></div>
+        <svg class="stamp" viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg>
+      </div>
+      <div>
+        <p class="eyebrow">This is me</p>
+        <h1>Hello, I'm <em>Ishita Sarin.</em></h1>
+        <div class="story">
+          <p>I'm a <b>Computer Science engineer turned designer</b>. My journey has gone from analytical to reflective.</p>
+          <p>Growing up, I was a sensitive child. It felt wrong to leave anyone out. One memory stayed with me: a woman in my society who lives with cerebral palsy, struggling to get out of her van at the bus stop while others laughed or looked away.</p>
+          <p>Moments like that made me notice how everyday systems are designed around an "average" person, and how often <b>accessibility becomes an afterthought</b>. Now I design to change that.</p>
+        </div>
+        <span class="now"><i aria-hidden="true"></i>Currently: M.Des student, Human-Centred Design, Srishti Manipal</span>
+      </div>
+    </section>
+
+    <p class="motto-line">“Your mind and your body are your biggest product.”<small>The line I live by</small></p>
+
+    <section aria-labelledby="val-t">
+      <h2 class="sec-t" id="val-t">What I value</h2>
+      <p class="sec-s">How do I care?</p>
+      <div class="values">
+        <div class="val frame"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><h3>Dignity</h3><p>People should be able to live, look and take part the way they choose.</p></div>
+        <div class="val frame"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><h3>Care</h3><p>Paying attention to emotional and everyday realities, not only function.</p></div>
+        <div class="val frame"><svg viewBox="0 0 80 120" aria-hidden="true"><use href="#sprig"/></svg><h3>Co-learning</h3><p>The people I design with teach me as much as I bring to them.</p></div>
+        <div class="val frame"><svg viewBox="0 0 100 130" aria-hidden="true"><use href="#buta"/></svg><h3>Contextual Sensitivity</h3><p>Designing for real lives, homes, cultures and constraints, especially across India.</p></div>
+        <div class="val frame"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><h3>Accessibility</h3><p>A starting point, never an afterthought.</p></div>
+      </div>
+    </section>
+
+    <section class="pe" aria-label="Practice and ethics">
+      <article>
+        <h3>My Practice</h3><p class="q">How do I work?</p>
+        <ul>
+          <li><div><b>Place-based learning</b><span>I learn where the work happens.</span></div></li>
+          <li><div><b>Field observation</b><span>Watching what people do, not only what they say.</span></div></li>
+          <li><div><b>Design for all by designing for niche</b><span>Solving for one overlooked group often helps many more.</span></div></li>
+        </ul>
+      </article>
+      <article>
+        <h3>My Ethics</h3><p class="q">How do I take responsibility?</p>
+        <ul>
+          <li><div><b>Design with, not for</b><span>People shape the outcome with me.</span></div></li>
+          <li><div><b>Respecting differences</b><span>Bodies, needs and lives aren't standard.</span></div></li>
+          <li><div><b>Cultural acceptance</b><span>Designs should fit people's culture, not ask them to give it up.</span></div></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="inquiry" aria-labelledby="inq-t">
+      <p class="eyebrow" id="inq-t">My current line of inquiry</p>
+      <q>How can context-sensitive design create more accessible and dignified outcomes rooted in culture and lived experiences?</q>
+      <p>Context-sensitive means designing with people's lived realities instead of standard assumptions: their lifestyle, environment, habits, culture, family support, finances and access needs.</p>
+    </section>
+
+    <section aria-labelledby="trail-t">
+      <h2 class="sec-t" id="trail-t">Where I've learned</h2>
+      <p class="sec-s">Each project took me somewhere new.</p>
+      <div class="trail">
+        <svg class="path" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true"><path d="M60 120 C 260 -20, 420 220, 520 100 S 820 20, 960 150" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="8 10"/></svg>
+        <figure><div class="win frame"><img src="img/dignity-field.jpg" alt="Fieldwork at BMVSS Jaipur Foot" loading="lazy"></div><figcaption><b>Jaipur</b>Prosthetic care at BMVSS</figcaption></figure>
+        <figure><div class="win frame"><img src="img/iaim-kitchen.jpg" alt="Hospital kitchen at iAIM" loading="lazy"></div><figcaption><b>Bengaluru</b>A hospital's diet system</figcaption></figure>
+        <figure><div class="win frame"><img src="img/cpc-accordion.jpg" alt="Accordion artefacts from Kundapura" loading="lazy"></div><figcaption><b>Kundapura</b>Palliative care home visits</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="cv" aria-label="Education and experience">
+      <div>
+        <h3>Education</h3>
+        <ol>
+          <li><span class="when">2025 – 2027</span><div><b>M.Des, Human-Centred Design</b><p>Srishti Manipal Institute of Art, Design and Technology</p></div></li>
+          <li><span class="when">2020 – 2024</span><div><b>B.Tech, Computer Science</b><p>Jaypee University of Information Technology, Waknaghat</p></div></li>
+          <li><span class="when">2018 – 2020</span><div><b>AISSCE, Science</b><p>Delhi Public School, Mathura Road</p></div></li>
+        </ol>
+      </div>
+      <div>
+        <h3>Experience</h3>
+        <ol>
+          <li><span class="when">Jan – Aug 2024</span><div><b>UX/UI Designer, Newgen Software</b><p>Platform UX/UI, design system and user flows</p></div></li>
+          <li><span class="when">Nov 2022 – Feb 2023</span><div><b>Graphic Designer, Selin Club</b><p>Campaigns, ads and social media</p></div></li>
+          <li><span class="when">Jun – Jul 2022</span><div><b>Graphic Designer, Elem India</b><p>Brochures, catalogues and labels</p></div></li>
+          <li><span class="when">2026</span><div><b>Research paper</b><p>Beyond the Fitting, submitted to the IndiaHCI 2026 Student Research Competition</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section style="display:grid;justify-items:center;gap:1.2rem;text-align:center" aria-labelledby="ct-t">
+      <h2 class="sec-t" id="ct-t">Say hello</h2>
+      <div class="contact-list">
+      <div><span>Phone</span><span class="v">+91 98214 58308</span></div>
+      <div><span>Email</span><span class="v">iishitasarin2021@gmail.com</span></div>
+      <div><span>LinkedIn</span><a class="v" href="https://www.linkedin.com/in/ishita-sarin-88b346218/" target="_blank" rel="noopener">linkedin.com/in/ishita-sarin ↗</a></div>
+      <div><span>Behance</span><a class="v" href="https://www.behance.net/ishitasarin18" target="_blank" rel="noopener">behance.net/ishitasarin18 ↗</a></div>
+      <div><span>GitHub</span><a class="v" href="https://github.com/Ishita054" target="_blank" rel="noopener">github.com/Ishita054 ↗</a></div>
+    </div>
+    </section>
+  </div>
+</main>
+
+<!-- ================= FUNSIES ================= -->
+<main class="view wrap funsies" id="v-funsies" hidden>
+  <h1 class="sr-only">Funsies</h1>
+  <section class="facts" aria-labelledby="fact-t">
+    <p class="k" id="fact-t">Treat yourself to something I learned in the field!</p>
+    <blockquote id="fact">One woman had painted her prosthetic leg with nail polish, to make it feel like her own.</blockquote>
+    <cite id="fact-src">From Jaipur, 2026</cite>
+    <button class="shuffle" id="shuffle" type="button" aria-label="Show another fact"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="M4 4l5 5"/></svg></button>
+  </section>
+
+  <section class="leave" aria-labelledby="leave-t">
+    <h2 id="leave-t">Leave a little something behind.</h2>
+    <p>Doodle on a chappal, a window or a block-print stamp, then take a screenshot to keep it. <i>This corner's yours for a moment!</i></p>
+    <div class="boards">
+      <div class="board sole"><div class="can"><canvas id="cv-1" aria-label="Drawing area shaped like a chappal sole"></canvas></div><span>A chappal</span></div>
+      <div class="board win"><div class="can frame"><canvas id="cv-2" aria-label="Drawing area shaped like a window"></canvas></div><span>A window</span></div>
+      <div class="board round"><div class="can"><canvas id="cv-3" aria-label="Round drawing area like a block-print stamp"></canvas></div><span>A stamp</span></div>
+    </div>
+    <button class="btn clear" id="clear" type="button">Clear my doodles</button>
+  </section>
+
+  <section class="neuro-link" aria-labelledby="nl-t">
+    <svg viewBox="0 0 80 120" width="40" height="60" style="color:var(--indigo)" aria-hidden="true"><use href="#sprig"/></svg>
+    <h2 id="nl-t">Want to step into 2081?</h2>
+    <p>NeuroSpace is a world I wrote and coded, where every memory is recorded. Best in Chrome, with headphones.</p>
+    <a class="btn" href="https://benevolent-malabi-99261a.netlify.app" target="_blank" rel="noopener">Step into NeuroSpace ↗</a>
+  </section>
+</main>
+
+<!-- ================= CASE STUDIES ================= -->
+<main class="view wrap case" id="v-dignity" hidden>
+  <button class="crumb" type="button" data-go="home">← All work</button>
+  <header class="case-hero">
+    <span class="k">Research · Service design · Product</span>
+    <h1>Beyond the Fitting</h1>
+    <p class="lede">Access, dignity and everyday participation in prosthetic care for women in India.</p>
+    <dl class="facts-row">
+      <div><dt>Team</dt><dd>Ishita Sarin &amp; Moulik Nanda</dd></div>
+      <div><dt>Field</dt><dd>6 days, BMVSS Jaipur Foot, April 2026</dd></div>
+      <div><dt>Output</dt><dd>Service model · Chappal Lock · research paper (submitted to IndiaHCI 2026)</dd></div>
+    </dl>
+  
+  <div class="tldr"><span class="tag">In 30 seconds</span><div><h4>The gap</h4><p>Women were missing from prosthetic care in India, and once fitted, the prosthesis still didn't fit their floor-sitting, chappal-wearing, mehendi-wearing lives.</p></div><div><h4>What I did</h4><p>Six days at BMVSS, 15 interviews, journey maps, a service blueprint and three printed prototypes.</p></div><div><h4>What came out</h4><p>A community-linked service model, the Chappal Lock, and a research paper submitted to IndiaHCI 2026.</p></div></div>
+  </header>
+  <div class="cover frame"><img src="img/dignity-field.jpg" alt="Fieldwork at BMVSS: fittings, interviews and conversations"></div>
+  <section class="cs why"><h2>Why I did this</h2><div class="body">
+    <p>I've always noticed who a system is built for, and who it quietly leaves out.</p>
+    <p>Growing up, I watched a woman with cerebral palsy struggle to get out of her van at our bus stop while people laughed or looked away. That stayed with me. When I began looking at prosthetics, I started with manufacturing: who makes them, for whom, at what cost and how far they reach.</p>
+    <p>At BMVSS the question changed. Among roughly fifty people a day, I kept counting two or three women. That number stayed with me more than any statistic I found later. It made me ask what keeps women from reaching care, and why a prosthesis that works can still not fit a woman's life. Dignity, for me, became something concrete: wearing your own chappal, sitting on the floor to cook, putting on mehendi for a wedding.</p>
+    <p class="role"><b>My role:</b> Manufacturing research, 15 interviews (5 with women), synthesis, journey maps, service blueprint, CAD and 3D-printed prototypes, co-authored the paper</p>
+  </div></section>
+  <aside class="moment frame"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><div><span class="k">A moment that stayed with me</span><blockquote>One woman had painted her prosthetic leg with nail polish.</blockquote><p>It wasn't decoration. It was her way of making it her own, and it reshaped what dignity meant in this project.</p></div></aside>
+
+  <section class="cs"><h2>The gap I noticed</h2><div class="body">
+    <p>What I saw at BMVSS matches the wider picture: a 2026 review of 14 Indian studies (7,272 patients) found 81.3% were men. Women travelled long distances, depended on family to get there, and often found the centre by chance.</p>
+    <p>Women who were fitted still couldn't do ordinary things: wear juttis, sit on the floor to cook, put on mehendi for a wedding.</p>
+    <div class="hmw">
+      <p>How might we improve access to prosthetic care for women who face social and mobility barriers?</p>
+      <p>How might we help women adapt their prosthesis to their culture and social life?</p>
+    </div>
+  </div></section>
+  <section class="cs"><h2>Designed for India, not an "average" user</h2><div class="body">
+    <p>Jaipur Foot was built for Indian lives: low-cost, rubber, made for walking barefoot and squatting. But a device designed around one set of assumptions can still shut out others. In the field, the gaps were rooted in culture, climate and how Indian homes work.</p>
+    <div class="ctx">
+      <div><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><span><b>Life on the floor</b><p>Cooking, prayer and meals happen sitting on the floor. Many removed the prosthesis before sitting down.</p></span></div>
+      <div><svg viewBox="0 0 100 130" aria-hidden="true"><use href="#buta"/></svg><span><b>Chappals and juttis</b><p>Backless footwear slips off with no toes to grip, often without the wearer noticing.</p></span></div>
+      <div><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><span><b>Mehendi, payal, bichiya</b><p>Women wanted to wear them, and avoided mehendi on the prosthetic limb for weddings and festivals.</p></span></div>
+      <div><svg viewBox="0 0 80 120" aria-hidden="true"><use href="#sprig"/></svg><span><b>Skin tone</b><p>A mismatched skin tone made women self-conscious in public and social settings.</p></span></div>
+      <div><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><span><b>Sarees and heat</b><p>Sarees snag on exposed callipers, metal rods heat up and irritate skin, and velcro causes blisters.</p></span></div>
+      <div><svg viewBox="0 0 100 130" aria-hidden="true"><use href="#buta"/></svg><span><b>Monsoon and fields</b><p>Rain changes stability, and one fixed foot can't handle farm terrain, cycling or heels.</p></span></div>
+      <div><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><span><b>Distance and family</b><p>Long journeys, cost, and family decisions often decide whether a woman reaches care at all.</p></span></div>
+      <div><svg viewBox="0 0 80 120" aria-hidden="true"><use href="#sprig"/></svg><span><b>ASHA and the panchayat</b><p>India already has trusted community health networks. My service model routes through them instead of building new ones.</p></span></div>
+    </div>
+  </div></section>
+
+  <section class="cs"><h2>What I did</h2><div class="body">
+    <ol class="steps">
+      <li><div><b>Mapped the landscape</b><p>Our cohort of 15 clustered the topic into five areas. I led Manufacturing, comparing prosthetic organisations by users, cost, maintenance and reach.</p></div></li>
+      <li><div><b>Six days in the field</b><p>Observed fitting and service, spoke with founder Dr. D. R. Mehta, and ran 15 open-ended interviews myself, five with women.</p></div></li>
+      <li><div><b>Synthesis</b><p>Affinity mapping across about 95 participant accounts from the cohort, an insight tracker of about 27 insights, and two journey maps.</p></div></li>
+      <li><div><b>Two directions from ten</b><p>A decentralised service model, and a small footwear lock.</p></div></li>
+      <li><div><b>Three rounds of prototypes</b><p>Each one CAD-modelled and 3D-printed, then tested informally with the team and peers.</p></div></li>
+    </ol>
+    <div class="gallery">
+    </div>
+    <div class="gallery one">
+      <figure><button type="button" data-zoom="img/dignity-ablevs.jpg"><img src="img/dignity-ablevs.jpg" alt="Journey map comparing a woman with a prosthesis and an able-bodied woman through the same day" loading="lazy"></button><figcaption>Abled vs not-so-abled: the same day for a woman with a prosthesis and an able-bodied woman. This map linked both concepts. <a class="flink" href="https://www.figma.com/board/zT1AgE19zENmCXxL3Odg2O/Evidences?node-id=229-1157&amp;t=4dDdxE71kiWJid3h-1" target="_blank" rel="noopener">Open in Figma ↗</a></figcaption></figure>
+      <figure><button type="button" data-zoom="img/dignity-patient.jpg"><img src="img/dignity-patient.jpg" alt="User flow of a patient through Jaipur Foot" loading="lazy"></button><figcaption>A patient's journey through Jaipur Foot, with the gaps and unanswered questions marked. <a class="flink" href="https://www.figma.com/board/zT1AgE19zENmCXxL3Odg2O/Evidences?node-id=47-193&amp;t=4dDdxE71kiWJid3h-1" target="_blank" rel="noopener">Open in Figma ↗</a></figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="cs"><h2>What I found</h2><div class="body">
+    <div class="cards3">
+      <div class="frame"><strong>Available ≠ accessible</strong><p>People knew the centre existed and still couldn't reach it: travel, cost, information, family decisions.</p></div>
+      <div class="frame"><strong>Chance</strong><p>A farmer brought his daughter through Rishikesh and Chandigarh before someone mentioned BMVSS.</p></div>
+      <div class="frame"><strong>Ownership</strong><p>One woman painted her prosthesis with nail polish. Personalisation was a way to make it hers.</p></div>
+    </div>
+    <div class="lines"><span>A chappal slipped.</span><span>A garment caught.</span><span>Rain changed the stability of the prosthesis.</span></div>
+  </div></section>
+
+  <section class="cs"><h2>What I made</h2><div class="body">
+    <p><b>A service that reaches women.</b> ASHA workers, PHCs and the panchayat identify people early. Coordinated transport, outreach camps and mobile 3D-scanning units bring care closer. After fitting, home follow-ups cover sitting, uneven ground and hygiene.</p>
+    <p><b>The Chappal Lock.</b> A small clip and strap that holds a chappal, jutti or mule on a prosthetic foot, without changing either. Round 2 broke at a drilled hole under load. Round 3 evened the grooves. A flat-sided version also helped people without prosthetics.</p>
+    <div class="gallery one">
+      <figure><button type="button" data-zoom="img/dignity-blueprint-full.jpg"><img src="img/dignity-blueprint-full.jpg" alt="Service blueprint: making prosthetics and orthoses available for all, especially women and children" loading="lazy"></button><figcaption>Service blueprint for decentralised, continuous care. <a class="flink" href="https://www.figma.com/board/zT1AgE19zENmCXxL3Odg2O/Evidences?node-id=338-3201&amp;t=4dDdxE71kiWJid3h-1" target="_blank" rel="noopener">Open in Figma ↗</a></figcaption></figure>
+      <figure><button type="button" data-zoom="img/dignity-prototypes.jpg"><img src="img/dignity-prototypes.jpg" alt="Three prototype rounds" loading="lazy"></button><figcaption>Three printed rounds, including the one that broke.</figcaption></figure>
+    </div>
+    <div class="niche" id="niche">
+      <div class="rings" aria-hidden="true">
+        <div class="ring r4" data-r="3"><span>Anyone who needs a steadier step</span></div>
+        <div class="ring r3" data-r="2"><span>Older adults</span></div>
+        <div class="ring r2" data-r="1"><span>All prosthetic users</span></div>
+        <div class="ring r1 on" data-r="0"><span>Women with prosthetics</span></div>
+      </div>
+      <div>
+        <p class="k" style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)">Design for all, by designing for niche</p>
+        <h3>Who the Chappal Lock was for, and who it turned out to help</h3>
+        <p class="step" id="niche-text" aria-live="polite">It started with a few women at BMVSS. Their chappals slipped off their prosthetic foot without them noticing, worse in the rain, so they stopped wearing the footwear they loved.</p>
+        <div class="ndots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+        <button class="btn" id="niche-next" type="button">Widen the circle →</button>
+      </div>
+    </div>
+    <div class="gallery one"><figure><button type="button" data-zoom="img/dignity-lock.jpg"><img src="img/dignity-lock.jpg" alt="Chappal Lock proof of concept and concept board" loading="lazy"></button><figcaption>Proof of concept on a real chappal (top) and concept board (bottom; render AI-assisted, concept and CAD mine).</figcaption></figure></div>
+  </div></section>
+    <section class="cs"><h2>What I learned</h2><div class="body"><div class="learn"><div data-n="01"><b>Available isn't accessible</b><p>A centre can exist and still be out of reach. Access is travel, money, information and family.</p></div><div data-n="02"><b>Design for the edges</b><p>A lock made for a few women turned out to help older adults too.</p></div><div data-n="03"><b>Testing with peers isn't testing with users</b><p>My next step is putting the lock on the feet it was made for.</p></div></div></div></section>
+  <div class="process frame"><b>Want to see the detailed process?</b><a class="btn" href="https://drive.google.com/file/d/1nrIWrK__9xsshPJYuE5ZzB1Qf27rOHCt/view?usp=drive_link" target="_blank" rel="noopener">Open the process folder ↗</a></div>
+  <aside class="mininote"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><p>Got a thought on <b>Beyond the Fitting</b>?</p><button class="btn" type="button" data-note="Beyond the Fitting">Gimme a note ✎</button></aside>
+  <div class="case-next"><button class="btn" type="button" data-go="home">← All work</button><button class="btn sm" type="button" data-go="work">All projects</button><button class="btn" type="button" data-go="iaim">Next: iAIM →</button></div>
+</main>
+
+<main class="view wrap case" id="v-iaim" hidden>
+  <button class="crumb" type="button" data-go="home">← All work</button>
+  <header class="case-hero">
+    <span class="k">Service design · Systems mapping</span>
+    <h1>iAIM Hospital Diet System</h1>
+    <p class="lede">Following a patient's meal from the doctor's prescription to their tiffin.</p>
+    <dl class="facts-row">
+      <div><dt>Team</dt><dd>Ishita Sarin &amp; Iniya R</dd></div>
+      <div><dt>Where</dt><dd>iAIM Healthcare Centre, Bengaluru, March 2026</dd></div>
+      <div><dt>Output</dt><dd>Visual patient booklet</dd></div>
+    </dl>
+  
+  <div class="tldr"><span class="tag">In 30 seconds</span><div><h4>The gap</h4><p>Diet is treatment at iAIM, but instructions reached patients as dense clinical text.</p></div><div><h4>What I did</h4><p>Mapped the system, followed one meal end to end, and read it through pattern language.</p></div><div><h4>What came out</h4><p>A visual, multilingual patient booklet the hospital chose.</p></div></div>
+  </header>
+  <div class="cover frame"><img src="img/iaim-cover.jpg" alt="The entrance of I-AIM Healthcare Centre, Bengaluru"></div>
+  <p style="font-size:.8rem;color:var(--soft);margin-top:.5rem">Photo: I-AIM Healthcare Centre</p>
+  <section class="cs why"><h2>Why I did this</h2><div class="body">
+    <p>In an Ayurveda hospital, food isn't hospitality. It's prescribed, like medicine.</p>
+    <p>I was curious how something so personal is coordinated at scale: a different diet for each patient, every day, passing between doctors, nurses, a diet committee, the Customer Relations Officer and an outsourced kitchen. I followed the diet system because it was where the hospital was most complex and least visible.</p>
+    <p>The meals were careful and well made. What surprised me was the gap in understanding: a patient guide written almost entirely in clinical text, for people who might not read well. Care that patients can't understand isn't complete care. That was the accessibility gap I wanted to close.</p>
+    <p class="role"><b>My role:</b> Observation, ecosystem map, customer journey map with data, pattern language, ideation and booklet prototype</p>
+  </div></section>
+  <aside class="moment frame"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><div><span class="k">A moment that stayed with me</span><blockquote>Every tiffin carried a small handwritten chit with a room number.</blockquote><p>The whole system ran on details like that: paper, memory and people who cared enough to check.</p></div></aside>
+  <section class="cs"><h2>What I did</h2><div class="body">
+    <ol class="steps">
+      <li><div><b>Observed the diet system</b><p>Planning, portioning, packing, tasting by nurses and the Customer Relations Officer, and delivery to rooms.</p></div></li>
+      <li><div><b>Ecosystem map</b><p>The diet system turned out to connect patients, doctors, the CRO, the diet committee and the kitchen.</p></div></li>
+      <li><div><b>Journey map with data</b><p>The CRO's numbers on patient mix, diets and staffing grounded our work in the system's real scale.</p></div></li>
+      <li><div><b>Pattern language</b><p>Pramod Khambete's method: patterns already in the system, and ones we could add.</p></div></li>
+      <li><div><b>Chose with the client</b><p>From four ideas, the CRO picked the booklet. We dropped a diet kit because of budget and licences.</p></div></li>
+    </ol>
+    <div class="gallery one">
+      <figure><button type="button" data-zoom="img/iaim-ecosystem.jpg"><img src="img/iaim-ecosystem.jpg" alt="Hand-drawn ecosystem map of iAIM, from front desk to kitchen and pharmacy" loading="lazy"></button><figcaption>Ecosystem map: every actor and handoff around the diet system.</figcaption></figure>
+      <figure><button type="button" data-zoom="img/iaim-cjm.jpg"><img src="img/iaim-cjm.jpg" alt="Customer journey map with touchpoints, pattern language and statistics" loading="lazy"></button><figcaption>Customer journey map with touchpoints, facts, open questions, pattern language and the CRO's statistics. Click to zoom.</figcaption></figure>
+    </div>
+  </div></section>
+  <section class="cs"><h2>Service design tools</h2><div class="body">
+    <p>Instead of jumping to solutions, we used pattern language to read the journey map: what already works in the system, and what could be added. That gave us three opportunity areas: diet understanding and transparency, communication and coordination gaps, and food flow and waste visibility.</p>
+    <div class="gallery">
+      <figure><button type="button" data-zoom="img/iaim-patterns.jpg"><img src="img/iaim-patterns.jpg" alt="Pattern language sheet" loading="lazy"></button><figcaption>Pattern language: existing and potential patterns.</figcaption></figure>
+      <figure><button type="button" data-zoom="img/iaim-opportunities.jpg"><img src="img/iaim-opportunities.jpg" alt="Design opportunity areas" loading="lazy"></button><figcaption>Opportunity areas drawn from the journey map.</figcaption></figure>
+    </div>
+    <div class="gallery one"><figure><button type="button" data-zoom="img/iaim-ideas.jpg"><img src="img/iaim-ideas.jpg" alt="Four ideas from simple to ambitious" loading="lazy"></button><figcaption>Four ideas, from simple to ambitious: visual diet chart, tiffin reminders, a diet kit, and patient and visitor booklets.</figcaption></figure></div>
+  </div></section>
+
+  <section class="cs"><h2>What I found</h2><div class="body">
+    <div class="cards3">
+      <div class="frame"><strong>4:30 pm</strong><p>Cut-off to change tomorrow's diet. Anything later goes through a WhatsApp group.</p></div>
+      <div class="frame"><strong>3 copies</strong><p>Of every daily chart: diet committee, kitchen, patient. Tiffins carry handwritten room chits.</p></div>
+      <div class="frame"><strong>50%</strong><p>Of patients are on special diets. About 80% are in-patients, at roughly 1 staff to 6 patients.</p></div>
+    </div>
+  </div></section>
+  <section class="cs"><h2>What I made</h2><div class="body">
+    <p>A visual companion that replaces a text-heavy guide: "What my body needs today", "What to expect" at each stage, and foods colour-coded as safe, careful or avoid, with the reasons. Multilingual, told as a story, and usable by patients who can't read well.</p>
+    <div class="gallery one"><figure><button type="button" data-zoom="img/iaim-sketches.jpg"><img src="img/iaim-sketches.jpg" alt="Booklet prototype sketches" loading="lazy"></button><figcaption>Booklet prototype sketches.</figcaption></figure></div>
+    <p><b>What it taught me:</b> smooth systems run on cut-off times, duplicate copies and informal channels. That's where errors hide, and where small redesigns help most.</p>
+  </div></section>
+    <section class="cs"><h2>What I learned</h2><div class="body"><div class="learn"><div data-n="01"><b>Look at the handoffs</b><p>Cut-offs, copies and WhatsApp messages are where systems are most fragile.</p></div><div data-n="02"><b>Let the client choose</b><p>The CRO knew which idea would actually get used. That saved us from building the wrong thing.</p></div><div data-n="03"><b>Visual beats verbal</b><p>For mixed literacy, colour and pictures do more work than paragraphs.</p></div></div></div></section>
+  <div class="process frame"><b>Want to see the detailed process?</b><a class="btn" href="https://drive.google.com/file/d/188zaBNdsnFjmcSXCF9yURUInLhNMiRmz/view?usp=drive_link" target="_blank" rel="noopener">Open the process folder ↗</a></div>
+  <aside class="mininote"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><p>Got a thought on <b>iAIM</b>?</p><button class="btn" type="button" data-note="iAIM">Gimme a note ✎</button></aside>
+  <div class="case-next"><button class="btn" type="button" data-go="dignity">← Beyond the Fitting</button><button class="btn sm" type="button" data-go="work">All projects</button><button class="btn" type="button" data-go="cpc">Next: Palliative care →</button></div>
+</main>
+
+<main class="view wrap case" id="v-cpc" hidden>
+  <button class="crumb" type="button" data-go="home">← All work</button>
+  <header class="case-hero">
+    <span class="k">Place-based learning · Care systems · Learning artefacts</span>
+    <h1>Community Palliative Care</h1>
+    <p class="lede">Four days with a community palliative care team in Kundapura, and the learning artefacts we made with them.</p>
+    <dl class="facts-row">
+      <div><dt>Team</dt><dd>Ishita Sarin, Gouri &amp; Nikkon</dd></div>
+      <div><dt>Where</dt><dd>Vandse, Alur &amp; Hakladi, Kundapura, Karnataka</dd></div>
+      <div><dt>When</dt><dd>February 2026</dd></div>
+      <div><dt>Made</dt><dd>System map · 4 accordion artefacts · exhibition</dd></div>
+    </dl>
+  
+  <div class="tldr"><span class="tag">In 30 seconds</span><div><h4>The gap</h4><p>Care work is relational and mostly invisible, even to the people doing it.</p></div><div><h4>What I did</h4><p>Days on home rounds, a system map, and 12 care stories turned into 4 accordions.</p></div><div><h4>What came out</h4><p>Artefacts the care team corrected, and a new meaning of care for me.</p></div></div>
+  </header>
+  <div class="cover frame"><img src="img/cpc-profs.jpg" alt="The accordion artefacts laid out while visitors read them"></div>
+  <section class="cs why"><h2>Why I did this</h2><div class="body">
+    <p>I came to Kundapura thinking palliative care meant the last stage of life, and that care systems were made of equipment, forms and schedules. I wanted to test that by being inside a care system instead of reading about it.</p>
+    <p>Place-based learning gave us that: days alongside a team that visits people in their homes, week after week. One question kept me going: what actually holds this system together? The answer wasn't in any workflow. It was in trust, familiarity and people adjusting for each other.</p>
+    <p>The accordions were our way of making that visible, and of giving something back to the team that let us in.</p>
+    <p class="role"><b>My role:</b> Field observation and documentation, system mapping, accordion artefacts, exhibition</p>
+  </div></section>
+  <aside class="moment frame"><svg viewBox="0 0 80 120" aria-hidden="true"><use href="#sprig"/></svg><div><span class="k">A moment that stayed with me</span><blockquote>The care team picked cashew apples for us and showed us how to eat them.</blockquote><p>Care, here, wasn't only for patients. It was how the team treated everyone, including us.</p></div></aside>
+
+  <section class="cs"><h2>What palliative care means to me now</h2><div class="body">
+    <p>Before this visit, I connected palliative care with the end of life. In Kundapura I saw something much wider: <b>a relational, community-based system of care for anyone who needs continuous support</b>. That includes people with neurological conditions, mental health conditions, age-related challenges, or anyone who can't fully care for themselves.</p>
+    <p>Care was wound dressing, blood pressure and sugar checks, and physiotherapy. It was also a counsellor helping someone relearn how to count, a team that knew a caregiver's tea preference, and extra diapers carried "just in case".</p>
+    <div class="lines"><span>The system works not because of efficiency alone,</span><span>but because of care, trust and belief.</span></div>
+  </div></section>
+
+  <section class="cs"><h2>How we learned</h2><div class="body">
+    <p>This was <b>place-based learning</b>: understanding a system by being inside it, with the people who run it, instead of studying it from outside. One of us asked questions, one took notes, and one sketched on site.</p>
+    <ol class="steps">
+      <li><div><b>Before the visit</b><p>Secondary research on palliative care, community health and the Samagra Arogya model of care.</p></div></li>
+      <li><div><b>Days 1–2: On rounds with the care team</b><p>Home visits in Vandse, Alur and Hakladi. We observed care in practice, the team's workflow, documentation and route planning, and how ASHA workers use the Need Assessment Form to bring people into care.</p></div></li>
+      <li><div><b>Day 3: Making sense of it</b><p>Refined our system map, colour-coded types of care, mapped the layers of care infrastructure, and turned 12 care stories into 4 accordions.</p></div></li>
+      <li><div><b>Day 4: Giving back</b><p>An exhibition for the care team, the gram panchayat president, visiting students and professors.</p></div></li>
+    </ol>
+  </div></section>
+
+  <section class="cs"><h2>What I understood about the system</h2><div class="body">
+    <p>I first saw infrastructure as equipment: tablets, vehicles, route maps, forms. In Kundapura it showed up as people and relationships.</p>
+    <div class="cards3">
+      <div class="frame"><strong>Trust</strong><p>The relationship between the care team and families is what makes visits work.</p></div>
+      <div class="frame"><strong>Connectors</strong><p>ASHA workers link families to the team. Saturdays are for updating schedules, equipment and records.</p></div>
+      <div class="frame"><strong>Flexibility</strong><p>When a team member is away, routes and roles shift so no one is missed.</p></div>
+    </div>
+    <p>The team: a counsellor-coordinator, two physiotherapists, two nurses, two drivers and a helper, caring for 305 people across seven gram panchayats.</p>
+  </div></section>
+
+  <section class="cs"><h2>Why accordions</h2><div class="body">
+    <p>Care doesn't happen as isolated events. It unfolds in layers, and most of the coordination happens backstage. An accordion let us show that:</p>
+    <ol class="steps">
+      <li><div><b>One layer at a time</b><p>Each fold opens the next part of a care story, the way we came to understand it.</p></div></li>
+      <li><div><b>Connections, not events</b><p>People, visits and decisions sit side by side, so the links between them are visible.</p></div></li>
+      <li><div><b>Visible and invisible care</b><p>The front: wound dressing and visits. The back: planning, rerouting and record-keeping.</p></div></li>
+    </ol>
+    <p>The artefact started as documentation and became a learning tool. At the exhibition, the care team recognised themselves in it, pointed out what we had missed and corrected us. We stopped collecting information and started learning together.</p>
+  </div></section>
+
+  <section class="cs"><h2>The accordions</h2><div class="body">
+    <p>Four accordions, each unfolding one care story panel by panel: who the care seeker is, what the team does in the room, what happens backstage, and what we were left wondering. Sticky notes mark what we observed, what we asked and what we still didn't know.</p>
+    <div class="strips">
+      <figure><button type="button" data-zoom="img/cpc/acc-01.jpg"><img src="img/cpc/acc-01.jpg" alt="Accordion 1, unfolded" loading="lazy"></button></figure>
+      <figure><button type="button" data-zoom="img/cpc/acc-02.jpg"><img src="img/cpc/acc-02.jpg" alt="Accordion 2, unfolded" loading="lazy"></button></figure>
+      <figure><button type="button" data-zoom="img/cpc/acc-03.jpg"><img src="img/cpc/acc-03.jpg" alt="Accordion 3, unfolded" loading="lazy"></button></figure>
+      <figure><button type="button" data-zoom="img/cpc/acc-04.jpg"><img src="img/cpc/acc-04.jpg" alt="Accordion 4, unfolded" loading="lazy"></button></figure>
+    </div>
+    <p class="flip-hint"><span>Tap any strip to unfold it full size.</span><a href="img/cpc/accordion.pdf" target="_blank" rel="noopener">Open the accordion PDF ↗</a></p>
+  </div></section>
+
+  <section class="cs"><h2>Our day out with the care team</h2><div class="body">
+    <p>Before the accordions came the case stories: one hand-drawn sheet per visit, sketched on the spot and finished the same night. Day 1 in Vandse, Day 2 in Hakladi. Swipe through them.</p>
+    <div class="flip" tabindex="0" aria-label="Case stories, scroll sideways"><figure><button type="button" data-zoom="img/cpc/story-cover.jpg"><img src="img/cpc/story-cover.jpg" alt="Hand-drawn case story page 1" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-02.jpg"><img src="img/cpc/story-02.jpg" alt="Hand-drawn case story page 2" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-04.jpg"><img src="img/cpc/story-04.jpg" alt="Hand-drawn case story page 3" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-05.jpg"><img src="img/cpc/story-05.jpg" alt="Hand-drawn case story page 4" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-06.jpg"><img src="img/cpc/story-06.jpg" alt="Hand-drawn case story page 5" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-07.jpg"><img src="img/cpc/story-07.jpg" alt="Hand-drawn case story page 6" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-08.jpg"><img src="img/cpc/story-08.jpg" alt="Hand-drawn case story page 7" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-09.jpg"><img src="img/cpc/story-09.jpg" alt="Hand-drawn case story page 8" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-11.jpg"><img src="img/cpc/story-11.jpg" alt="Hand-drawn case story page 9" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-12.jpg"><img src="img/cpc/story-12.jpg" alt="Hand-drawn case story page 10" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-13.jpg"><img src="img/cpc/story-13.jpg" alt="Hand-drawn case story page 11" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-14.jpg"><img src="img/cpc/story-14.jpg" alt="Hand-drawn case story page 12" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-15.jpg"><img src="img/cpc/story-15.jpg" alt="Hand-drawn case story page 13" loading="lazy"></button></figure><figure><button type="button" data-zoom="img/cpc/story-19.jpg"><img src="img/cpc/story-19.jpg" alt="Hand-drawn case story page 14" loading="lazy"></button></figure></div>
+    <p class="flip-hint"><span>← Swipe or scroll sideways →</span><a href="img/cpc/case-stories.pdf" target="_blank" rel="noopener">Open all case stories (PDF) ↗</a></p>
+  </div></section>
+
+  <section class="cs"><h2>What we made</h2><div class="body">
+    <div class="gallery photos">
+      <figure><button type="button" data-zoom="img/cpc-sketching.jpg"><img src="img/cpc-sketching.jpg" alt="Sketching field observations at night" loading="lazy"></button></figure>
+      <figure><button type="button" data-zoom="img/cpc-map.jpg"><img src="img/cpc-map.jpg" alt="Building the system map on the wall" loading="lazy"></button></figure>
+      <figure><button type="button" data-zoom="img/cpc-sketching2.jpg"><img src="img/cpc-sketching2.jpg" alt="Drawing an accordion panel" loading="lazy"></button></figure>
+      <figure><button type="button" data-zoom="img/cpc-accordion.jpg"><img src="img/cpc-accordion.jpg" alt="Accordion artefacts" loading="lazy"></button></figure>
+      <figure><button type="button" data-zoom="img/cpc-team.jpg"><img src="img/cpc-team.jpg" alt="The care team reading the artefacts" loading="lazy"></button></figure>
+      <figure><button type="button" data-zoom="img/cpc-uday.jpg"><img src="img/cpc-uday.jpg" alt="The gram panchayat president looking at the work" loading="lazy"></button></figure>
+    </div>
+  </div></section>
+
+  <section class="cs"><h2>What changed in me</h2><div class="body">
+    <p>I used to collect as much information as I could and treat learning as something I gather. Now I know the most valuable insights come from watching interactions, not asking direct questions. What sustains a system often isn't written in any workflow. Artefacts can mediate between people. And systems are lived by people.</p>
+    <p><b>Ethics in practice:</b> consent before every photo, identities kept intact, and knowing when to stop asking.</p>
+  </div></section>
+    <section class="cs"><h2>What I learned</h2><div class="body"><div class="learn"><div data-n="01"><b>Watch, don't just ask</b><p>The best insights came from interactions, not interview questions.</p></div><div data-n="02"><b>Artefacts are conversations</b><p>The accordion worked when the team started correcting it.</p></div><div data-n="03"><b>Systems are lived</b><p>What holds care together isn't written in any workflow.</p></div></div></div></section>
+  <div class="process frame"><b>Want to see the detailed process?</b><a class="btn" href="https://drive.google.com/file/d/1u9ab6S6vrxkLqaqDFYyuAQBC2763VBHN/view?usp=drive_link" target="_blank" rel="noopener">Open the process folder ↗</a></div>
+  <aside class="mininote"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><p>Got a thought on <b>Community Palliative Care</b>?</p><button class="btn" type="button" data-note="Community Palliative Care">Gimme a note ✎</button></aside>
+  <div class="case-next"><button class="btn" type="button" data-go="iaim">← iAIM</button><button class="btn sm" type="button" data-go="work">All projects</button><button class="btn" type="button" data-go="neuro">Next: NeuroSpace →</button></div>
+</main>
+
+<main class="view wrap case" id="v-neuro" hidden>
+  <button class="crumb" type="button" data-go="home">← All work</button>
+  <header class="case-hero">
+    <span class="k">Speculative design · Interaction design · Code</span>
+    <h1>NeuroSpace</h1>
+    <p class="lede">It is 2081. A neural implant records everything you live, and a company called mémoire keeps it. For some, the fear isn't forgetting. It's remembering too much.</p>
+    <dl class="facts-row">
+      <div><dt>Team</dt><dd>Solo</dd></div>
+      <div><dt>Made</dt><dd>2 physical artefacts · 2 software prototypes · a web world · a film</dd></div>
+      <div><dt>Experience it</dt><dd><a href="https://benevolent-malabi-99261a.netlify.app" target="_blank" rel="noopener">Live site ↗</a> · <a href="https://github.com/Ishita054/To-the-future-world" target="_blank" rel="noopener">Code ↗</a></dd></div>
+    </dl>
+  
+  <div class="tldr"><span class="tag">In 30 seconds</span><div><h4>The gap</h4><p>Talk about memory tech stays abstract. People read the risks but don't feel them.</p></div><div><h4>What I did</h4><p>Wrote a world in 2081 and nine lives inside it, then built it as objects, software, film and a website.</p></div><div><h4>What came out</h4><p>Odeur and Cinq Sens, Memory Book, Memory Compression, and a live web world.</p></div></div>
+  </header>
+  <div class="gist frame">
+    <video controls preload="none" playsinline poster="img/neuro-montage-poster.jpg" aria-label="NeuroSpace montage film">
+      <source src="img/neuro-montage.mp4" type="video/mp4">
+    </video>
+    <p><b>The gist, in two minutes</b><span>From cave walls to the cloud to memory sharing: a montage I edited to set the scene for 2081.</span></p>
+    <p style="font-size:.8rem;opacity:.8">Contains third-party footage (including Kurzgesagt and BBC), used for educational purposes.</p>
+  </div>
+  <section class="cs why"><h2>Why I did this</h2><div class="body">
+    <p>What happens when technology stops being a tool and starts holding parts of us?</p>
+    <p>As a Computer Science engineer who became a designer, I keep coming back to that question. Memory felt like the most personal place to ask it. We already keep our lives in phones and clouds. I pushed that one step further: if every memory is recorded, who owns it? Who can delete it, sell it or read it? And who pays the cost?</p>
+    <p>Writing about that future felt too distant, so I built it. Turning nine lives into a world I could code forced me to make every rule concrete, and lets people feel the consequences instead of reading about them.</p>
+    <p class="role"><b>My role:</b> Concept, worldbuilding, writing, interaction design and code</p>
+  </div></section>
+  <aside class="moment frame"><svg viewBox="0 0 100 130" aria-hidden="true"><use href="#buta"/></svg><div><span class="k">A moment that stayed with me</span><blockquote>For some, the fear isn't forgetting. It's remembering too much.</blockquote><p>That one line became the emotional centre of the world.</p></div></aside>
+  <section class="cs"><h2>Nine lives</h2><div class="body">
+    <div class="lives">
+      <div><b>The Teacher</b><span>Hides her memories in pieces across other people.</span></div>
+      <div><b>The Archive Authority</b><span>Reads what you deleted.</span></div>
+      <div><b>The Atypical Patient</b><span>Saved only happy moments.</span></div>
+      <div><b>The Relapser</b><span>Keeps returning to one safe afternoon.</span></div>
+      <div><b>The Animal Companion</b><span>Relives a dog's memory and pays in years.</span></div>
+      <div><b>The Minor</b><span>Recorded from birth, locked out until 18.</span></div>
+      <div><b>The Broker</b><span>Buys fragments nobody meant to sell.</span></div>
+      <div><b>The Inheritor</b><span>Owns a parent's whole archive.</span></div>
+      <div><b>The Recipient Animal</b><span>Carries pieces of a human mind.</span></div>
+    </div>
+  </div></section>
+  <section class="cs"><h2>One future, four ways in</h2><div class="body">
+    <p>I didn't want NeuroSpace to live only on paper. So I kept returning to the same world from different directions: as a story, as objects you could hold, as software you could use, and as a film. Each one tested the idea in a way the others couldn't.</p>
+  </div></section>
+
+  <section class="cs"><h2>1. The world</h2><div class="body">
+    <p>I wrote the rules of 2081 through nine perspectives, from the company that keeps everyone's memories to a child who isn't allowed to see her own until she turns 18. Then I built it as an interactive website: a 40-second explainer, an archive of nine lives, a briefing before each one, and a "what this shows" card at the end.</p>
+    <p><a class="btn" href="https://benevolent-malabi-99261a.netlify.app" target="_blank" rel="noopener" style="color:var(--indigo)">Step into NeuroSpace ↗</a> <span style="color:var(--soft);font-size:.9rem">Best in Chrome, with headphones.</span></p>
+  </div></section>
+
+  <section class="cs"><h2>2. Objects from 2081</h2><div class="body">
+    <p>My first six ideas (compression, smell, prompts, face tracking, search, touch) turned out to be the same archive entered through different senses. So I built devices for retrieving a memory.</p>
+    <div class="concepts" style="margin-top:.5rem">
+      <article class="concept">
+        <figure><button type="button" data-zoom="img/neuro-odeur.jpg"><img src="img/neuro-odeur.jpg" alt="Odeur prototype from front, back and side, with labelled parts" loading="lazy"></button></figure>
+        <div><span class="k">Artefact 1</span><h3>Odeur</h3><p>Can a scent bring back one specific memory, for one specific person?</p>
+          <ol class="steps"><li><div><b>Who are you?</b><p>Iris detection on the base unlocks the device only for its owner, because memories are personal.</p></div></li><li><div><b>How strong?</b><p>A modulator dial sets the intensity, from a hint to a strong scent.</p></div></li><li><div><b>Remember</b><p>The matching scent is released, and the device rolls toward you on wheels.</p></div></li></ol>
+          <p style="font-family:var(--body);font-style:normal;font-size:.92rem;color:var(--soft);margin-top:.6rem">Tested Wizard-of-Oz style. Its limit was clear quickly: one sense isn't enough.</p></div>
+      </article>
+      <article class="concept">
+        <figure><button type="button" data-zoom="img/neuro-cinq.jpg"><img src="img/neuro-cinq.jpg" alt="Cinq Sens prototype with labelled parts" loading="lazy"></button></figure>
+        <div><span class="k">Artefact 2</span><h3>Cinq Sens</h3><p>What if retrieval isn't locked to one sense, but all of them?</p>
+          <ol class="steps"><li><div><b>Recognises people and pets</b><p>Iris detection for humans, a paw sensor for animals (with a laser that helps them stay still), and a thermal sensor that reads body heat.</p></div></li><li><div><b>You choose the sense</b><p>A regulator dial picks smell, taste, sound, video, or all of them.</p></div></li><li><div><b>It plays the memory back</b><p>A smell module, a taste-bud module, audio, and a small video projector.</p></div></li></ol></div>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="cs"><h2>3. Software that remembers</h2><div class="body">
+    <p>Then I built the same logic as two working web prototypes, using the camera, microphone and in-browser machine learning.</p>
+    <div class="concepts" style="margin-top:.5rem">
+      <article class="concept">
+        <figure><button type="button" data-zoom="img/neuro-book-touch.jpg"><img src="img/neuro-book-touch.jpg" alt="Holding an object to the camera to retrieve a memory" loading="lazy"></button></figure>
+        <div><span class="k">Prototype 1</span><h3>Memory Book</h3><p>Find a memory the way your mind does.</p>
+          <ol class="steps"><li><div><b>Touch</b><p>Hold an object up to the camera, and the memories tied to it surface.</p></div></li><li><div><b>Search, smell or describe</b><p>Type or speak, describe a scent, or just describe what happened.</p></div></li><li><div><b>See the cost</b><p>Each sense has a storage cost. Smell, touch and taste cost more than audio or video, which makes "too much memory" tangible.</p></div></li></ol>
+          <p><a class="btn" href="https://drive.google.com/file/d/1JmgcKZ7E5uBr-7dCunrGosQbNCLiAnWh/view?usp=sharing" target="_blank" rel="noopener" style="color:var(--indigo);font-family:var(--display);font-style:normal">Watch the demo ↗</a></p></div>
+      </article>
+      <article class="concept">
+        <figure><button type="button" data-zoom="img/neuro-comp-2.jpg"><img src="img/neuro-comp-2.jpg" alt="A video where one region stays sharp and the rest becomes colour blocks" loading="lazy"></button></figure>
+        <div><span class="k">Prototype 2</span><h3>Memory Compression</h3><p>You can't keep everything. What stays sharp?</p>
+          <ol class="steps"><li><div><b>Upload a memory</b><p>Any video becomes a memory to keep.</p></div></li><li><div><b>Choose what matters</b><p>Mark the parts that stay sharp. Everything else fades into colour blobs.</p></div></li><li><div><b>Build what works</b><p>I tried Meta's SAM2 for tracking, but it needed a GPU server. So I built a simpler version myself that runs in the browser.</p></div></li></ol>
+          <p><a class="btn" href="https://drive.google.com/file/d/1rVB9dJ4JF1GftsC-pi4yuAEd0mBfSmVv/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--indigo);font-family:var(--display);font-style:normal">Watch the demo ↗</a></p></div>
+      </article>
+    </div>
+    <div class="gallery">
+      <figure><button type="button" data-zoom="img/neuro-book-home.jpg"><img src="img/neuro-book-home.jpg" alt="Memory Book home screen with five ways in" loading="lazy"></button><figcaption>Memory Book: five ways into one archive.</figcaption></figure>
+      <figure><button type="button" data-zoom="img/neuro-comp-1.jpg"><img src="img/neuro-comp-1.jpg" alt="A compressed memory, mostly colour blocks" loading="lazy"></button><figcaption>Memory Compression: what you let go of.</figcaption></figure>
+    </div>
+    <p style="font-size:.92rem;color:var(--soft)"><b>Tech I explored:</b> TensorFlow.js, COCO-SSD, MediaPipe, Web Speech API, Web Audio API, Teachable Machine, OpenCV.js and Three.js.</p>
+  </div></section>
+
+  <section class="cs"><h2>4. Rehearsing it</h2><div class="body">
+    <p>I also rehearsed this future outside the screen: the montage at the top of this page, which traces how humans have stored memory, and a kit-bashed physical artefact.</p>
+    <p style="display:flex;flex-wrap:wrap;gap:.6rem">
+      <a class="btn" href="https://1drv.ms/v/c/eccc095d85c48b5e/IQD5vcbI-ajdT65V6BK1k-ZNAdNBmqHurH9Lemk5jtlLP4k?e=yGnTuh" target="_blank" rel="noopener" style="color:var(--indigo)">Watch the montage ↗</a>
+      <a class="btn" href="https://app.notion.com/p/KIT-BASHING-ARTEFACT-3d0cd4c4e7438058ba70ec932c66e5c3?source=copy_link" target="_blank" rel="noopener" style="color:var(--indigo)">See the kit-bash artefact ↗</a>
+      <a class="btn" href="https://app.notion.com/p/A1-Thinking-Through-Technological-Things-Future-of-Interaction-Design-3e1cd4c4e74380d4bb7bc1b6623c775d?source=copy_link" target="_blank" rel="noopener" style="color:var(--indigo)">Read the design journal ↗</a>
+    </p>
+  </div></section>
+    <section class="cs"><h2>What I learned</h2><div class="body"><div class="learn"><div data-n="01"><b>Imperfect first is fine</b><p>Odeur only used smell. That showed me it needed more senses, so Cinq Sens came next.</p></div><div data-n="02"><b>Build what you can run</b><p>When SAM2 needed a GPU and money, I built something simpler myself, and it worked.</p></div><div data-n="03"><b>Test an idea twice</b><p>Objects and software tested the same idea in different ways. Doing both made it feel real.</p></div></div><p style="margin-top:1rem">Next, I want to build NeuroSpace as a full 3D space you can move through, and explore dimensions of memory beyond the five senses: time, distance, and how strongly a memory is felt.</p></div></section>
+  <div class="process frame"><b>Want to see the detailed process?</b><a class="btn" href="https://drive.google.com/file/d/1ODrA8sFwo7-rCeR7aeg4zXXel2K6Xlht/view?usp=drive_link" target="_blank" rel="noopener">Open the process folder ↗</a></div>
+  <aside class="mininote"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><p>Got a thought on <b>NeuroSpace</b>?</p><button class="btn" type="button" data-note="NeuroSpace">Gimme a note ✎</button></aside>
+  <div class="case-next"><button class="btn" type="button" data-go="cpc">← Palliative care</button><button class="btn sm" type="button" data-go="work">All projects</button><button class="btn" type="button" data-go="medicare">Next: Medicare →</button></div>
+</main>
+
+<main class="view wrap case" id="v-medicare" hidden>
+  <button class="crumb" type="button" data-go="home">← All work</button>
+  <header class="case-hero">
+    <span class="k">Product concept · Accessibility · 2025</span>
+    <h1>Medicare</h1>
+    <p class="lede">Medication reminders for older adults that don't depend on a phone.</p>
+  
+  <div class="tldr"><span class="tag">In 30 seconds</span><div><h4>The gap</h4><p>Missed doses and mixed-up medicines, and reminders people don't want to carry.</p></div><div><h4>What I did</h4><p>Mapped pain points and sketched three ways to remind without a phone.</p></div><div><h4>What came out</h4><p>A necklace, a watch band and MediClock+, sharing one language: vibration, light, colour.</p></div></div>
+  </header>
+  <section class="cs why"><h2>Why I did this</h2><div class="body">
+    <p>Missing a dose sounds small. For older adults and people managing chronic illness, it adds up: medicines that look alike, routines that change, and reminders that live on a phone they may not use.</p>
+    <p>Many existing reminders felt clinical, hard to use, not portable, or like something people would be embarrassed to carry. That stigma matters as much as the forgetting.</p>
+    <p>I wanted reminders that fit into a person's day and body: worn like jewellery, glanced at like a watch, or sitting on the table, using vibration, light and colour instead of a screen.</p>
+    <p class="role"><b>My role:</b> Problem framing, pain points, concept sketches for three directions</p>
+  </div></section>
+  <aside class="moment frame"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><div><span class="k">A moment that stayed with me</span><blockquote>The stigma matters as much as the forgetting.</blockquote><p>If a reminder looks like a hospital device, people leave it at home.</p></div></aside>
+  <section class="cs"><h2>What I noticed</h2><div class="body">
+    <p>Forgetfulness and irregular routines, confusion between medicines, reminders that aren't accessible or portable, and poor engagement.</p>
+  </div></section>
+  <div class="cover frame"><img src="img/medicare-cover.jpg" alt="Coloured sketch of the MediClock+ weekly organiser" style="object-fit:contain;max-height:30rem"></div>
+  <section class="cs"><h2>How it works</h2><div class="body">
+    <p>Three ways to remind, for three kinds of people. Each uses the same language: <b>vibration</b> to get attention, <b>light</b> to show where, and <b>colour</b> to show which medicine.</p>
+  </div></section>
+  <div class="concepts">
+    <article class="concept">
+      <figure><button type="button" data-zoom="img/medicare-necklace.jpg"><img src="img/medicare-necklace.jpg" alt="Sketch of the interactive necklace" loading="lazy"></button></figure>
+      <div><span class="k">Concept 1</span><h3>Interactive necklace</h3>
+        <p>For people who want a reminder no one else notices.</p>
+        <ol class="steps"><li><div><b>Wear it like jewellery</b><p>The pendant holds colour strips, one for each medicine: tablet, eye drop or syrup.</p></div></li><li><div><b>It tells you when</b><p>At dose time it vibrates gently, warms and glows against the skin.</p></div></li><li><div><b>The colour tells you what</b><p>The glowing strip shows which medicine to take, so nothing gets mixed up.</p></div></li></ol>
+      </div>
+    </article>
+    <article class="concept">
+      <figure><button type="button" data-zoom="img/medicare-band.jpg"><img src="img/medicare-band.jpg" alt="Sketch of the dose band watch" loading="lazy"></button></figure>
+      <div><span class="k">Concept 2</span><h3>Watch dose band</h3>
+        <p>For people who already wear a watch and want it always on them.</p>
+        <ol class="steps"><li><div><b>Set it once</b><p>Buttons set the hour and minutes, with reset and delete for each alarm.</p></div></li><li><div><b>Feel it, see it</b><p>At dose time it vibrates and a cue light glows, which helps in low light or with hearing loss.</p></div></li><li><div><b>Read the dose</b><p>Colour strips show the type and the quantity, for example three tablets and one syrup.</p></div></li></ol>
+      </div>
+    </article>
+    <article class="concept">
+      <figure><button type="button" data-zoom="img/medicare-clock.jpg"><img src="img/medicare-clock.jpg" alt="Sketch of MediClock+ with labelled parts" loading="lazy"></button></figure>
+      <div><span class="k">Concept 3</span><h3>MediClock+</h3>
+        <p>For people managing many medicines at home.</p>
+        <ol class="steps"><li><div><b>Organised by day and time</b><p>A week of compartments, split into morning, afternoon, evening and night.</p></div></li><li><div><b>The right box lights up</b><p>At 7 pm, the evening compartment glows, with a vibration and a bell so it's hard to miss.</p></div></li><li><div><b>Made for real hands</b><p>Colour-coded medicines, big easy handles, a detachable mini box for travel, and an eye-drop tool for precise aim.</p></div></li></ol>
+      </div>
+    </article>
+  </div>
+    <section class="cs"><h2>What I learned</h2><div class="body"><div class="learn"><div data-n="01"><b>Stigma is a constraint</b><p>A reminder has to be something people are happy to wear or keep out.</p></div><div data-n="02"><b>One language, many forms</b><p>Vibration, light and colour work the same across necklace, watch and box.</p></div><div data-n="03"><b>Next: test with elders</b><p>Concepts need real hands, real routines and real medicine cabinets.</p></div></div></div></section>
+  <div class="process frame"><b>Want to see the detailed process?</b><a class="btn" href="https://drive.google.com/file/d/1u_UTaEAwlFL-ZdjFoZYXWh0s1ed-SDcA/view?usp=drive_link" target="_blank" rel="noopener">Open the process folder ↗</a></div>
+  <aside class="mininote"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><p>Got a thought on <b>Medicare</b>?</p><button class="btn" type="button" data-note="Medicare">Gimme a note ✎</button></aside>
+  <div class="case-next"><button class="btn" type="button" data-go="neuro">← NeuroSpace</button><button class="btn sm" type="button" data-go="work">All projects</button><button class="btn" type="button" data-go="moonday">Next: Moonday →</button></div>
+</main>
+
+<main class="view wrap case" id="v-moonday" hidden>
+  <button class="crumb" type="button" data-go="home">← All work</button>
+  <header class="case-hero">
+    <span class="k">UX/UI case study · Mobile app · 2022</span>
+    <h1>Moonday</h1>
+    <p class="lede">A menstrual health app that tracks gently, looks after wellbeing and talks openly.</p>
+    <dl class="facts-row">
+      <div><dt>Year</dt><dd>2022</dd></div>
+      <div><dt>For</dt><dd>Women aged 10–55, social service agencies, anyone learning about periods</dd></div>
+      <div><dt>Tools</dt><dd>Figma, paper prototyping</dd></div>
+      <div><dt>Case study</dt><dd><a href="https://www.behance.net/gallery/186195281/MENSTRUAL-APP" target="_blank" rel="noopener">Behance ↗</a></dd></div>
+    </dl>
+  
+  <div class="tldr"><span class="tag">In 30 seconds</span><div><h4>The gap</h4><p>Periods are discussed more openly, but tracking apps still feel clinical and stop at dates.</p></div><div><h4>What I did</h4><p>My first full UX case study: research, personas, journeys, IA and 19 wireframes.</p></div><div><h4>What came out</h4><p>An app that tracks, cares and connects, with a warm tone.</p></div></div>
+  </header>
+  <div class="cover frame"><img src="img/moonday-hero.jpg" alt="Moonday cover: an illustrated woman with menstrual health icons" style="object-fit:contain;max-height:32rem;background:#FBE9F0"></div>
+
+  <section class="cs why"><h2>Why I did this</h2><div class="body">
+    <p>Periods are talked about more openly than they were a few decades ago. But care hasn't caught up.</p>
+    <p>Cramps, mood swings, bloating, the constant fear of staining, and the effort of remembering dates still fall on women every month, and many quietly neglect their own health and wellness. 54% of women say remembering their cycle date isn't easy.</p>
+    <p>The apps I looked at (Flo, Premom, Glow Fertility, Maya, Lunar) were mostly about tracking. I wanted one warm space that also cares for the person: mood, exercise, diet, community, and a way to find agencies that donate sanitary pads.</p>
+    <p class="role"><b>My role:</b> Solo UX case study: research, personas, empathy maps, journey, information architecture, site map, wireframes and visual direction</p>
+  </div></section>
+  <aside class="moment frame"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><div><span class="k">A moment that stayed with me</span><blockquote>It's that time of the month.</blockquote><p>The line my case study opened with. I wanted the app to talk the way women actually talk to each other.</p></div></aside>
+
+  <section class="cs"><h2>What it does</h2><div class="body">
+    <ol class="steps">
+      <li><div><b>Tracks and predicts</b><p>Periods and fertility window, and helps you understand your own patterns.</p></div></li>
+      <li><div><b>Looks after you</b><p>Verified exercises and meditation, music for your mood, water reminders, and a verified diet plan.</p></div></li>
+      <li><div><b>Teaches and connects</b><p>Guides to periods and self-care, a community tab with a secret mode, nearby medical stores, and trusted agencies to donate sanitary pads.</p></div></li>
+    </ol>
+    <div class="gallery one"><figure><button type="button" data-zoom="img/moonday-brief.jpg"><img src="img/moonday-brief.jpg" alt="Problem statement, app description and target audience" loading="lazy" style="max-height:34rem;object-fit:cover;object-position:top"></button><figcaption>Problem statement, features and target audience. Click to read.</figcaption></figure></div>
+  </div></section>
+
+  <section class="cs"><h2>Who it's for</h2><div class="body">
+    <p>Two personas and their empathy maps kept the design grounded in what people say, do, think and feel about period apps. Their frustrations were clear: too many ads, paid subscriptions, unverified content and cluttered design.</p>
+    <div class="gallery">
+      <figure><button type="button" data-zoom="img/moonday-personas.jpg"><img src="img/moonday-personas.jpg" alt="Two user personas" loading="lazy"></button><figcaption>User personas.</figcaption></figure>
+      <figure><button type="button" data-zoom="img/moonday-empathy.jpg"><img src="img/moonday-empathy.jpg" alt="Two empathy maps" loading="lazy"></button><figcaption>Empathy maps.</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="cs"><h2>Structure</h2><div class="body">
+    <p>A user journey showed where people feel low and high. The information architecture and site map organise the app into Calendar &amp; Reminders, Community, Insights, Be You and Shop.</p>
+    <div class="gallery one"><figure><button type="button" data-zoom="img/moonday-journey.jpg"><img src="img/moonday-journey.jpg" alt="User journey scenario" loading="lazy"></button><figcaption>User journey scenario.</figcaption></figure></div>
+    <div class="gallery">
+      <figure><button type="button" data-zoom="img/moonday-ia.jpg"><img src="img/moonday-ia.jpg" alt="Information architecture" loading="lazy"></button><figcaption>Information architecture.</figcaption></figure>
+      <figure><button type="button" data-zoom="img/moonday-sitemap.jpg"><img src="img/moonday-sitemap.jpg" alt="Site map" loading="lazy"></button><figcaption>Site map.</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="cs"><h2>From paper to flow</h2><div class="body">
+    <p>19 paper wireframes, from splash and onboarding to the questions that set up your cycle, and the home, community and insights screens.</p>
+    <div class="gallery one"><figure><button type="button" data-zoom="img/moonday-wires.jpg"><img src="img/moonday-wires.jpg" alt="Nineteen paper wireframes" loading="lazy" style="max-height:40rem;object-fit:cover;object-position:top"></button><figcaption>Paper wireframes. Click to see all 19.</figcaption></figure></div>
+  </div></section>
+    <section class="cs"><h2>What I learned</h2><div class="body"><div class="learn"><div data-n="01"><b>Where my UX started</b><p>Research, personas, IA and wireframes, all in one project, for the first time.</p></div><div data-n="02"><b>Tone is a feature</b><p>How an app speaks matters as much as what it tracks.</p></div><div data-n="03"><b>What I'd do now</b><p>Test with real users and design for Indian households, privacy and shared phones.</p></div></div></div></section>
+  <div class="process frame"><b>Want to see the detailed process?</b><a class="btn" href="https://drive.google.com/drive/folders/1fQ86nihJmLhL8ZO9PALT51-5r16sOCy-?usp=drive_link" target="_blank" rel="noopener">Open the process folder ↗</a></div>
+  <aside class="mininote"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><p>Got a thought on <b>Moonday</b>?</p><button class="btn" type="button" data-note="Moonday">Gimme a note ✎</button></aside>
+  <div class="case-next"><button class="btn" type="button" data-go="medicare">← Medicare</button><button class="btn sm" type="button" data-go="work">All projects</button><button class="btn" type="button" data-go="site">Next: This portfolio →</button></div>
+</main>
+
+<main class="view wrap case" id="v-site" hidden>
+  <button class="crumb" type="button" data-go="home">← All work</button>
+  <header class="case-hero">
+    <span class="k">UX/UI · Design system · 2026</span>
+    <h1>This Portfolio</h1>
+    <p class="lede">You're looking at the project. Here's how it came together.</p>
+    <dl class="facts-row">
+      <div><dt>Year</dt><dd>2026</dd></div>
+      <div><dt>Built with</dt><dd>HTML, CSS and JavaScript, with AI-assisted coding</dd></div>
+      <div><dt>Works on</dt><dd>Phone and desktop</dd></div>
+      <div><dt>Respects</dt><dd>Reduced motion, keyboard use, alt text</dd></div>
+    </dl>
+    <div class="tldr"><span class="tag">In 30 seconds</span><div><h4>The gap</h4><p>Portfolios tend to look the same and read like reports.</p></div><div><h4>What I did</h4><p>Built a small design system from Jaipur hand-block print, then iterated through four directions.</p></div><div><h4>What came out</h4><p>A portfolio that feels like my practice: warm, rooted, clear and a little playful.</p></div></div>
+  </header>
+
+  <section class="cs why"><h2>Why I did this</h2><div class="body">
+    <p>A portfolio is the first design a recruiter experiences, long before they read a case study.</p>
+    <p>My work is about context: designing for real people in real places in India. A generic template would have said the opposite. I wanted the site itself to show how I think: rooted in culture, careful with words, and made for the person on the other side of the screen.</p>
+    <p class="role"><b>My role:</b> Art direction, information architecture, UX writing, design system and every content decision</p>
+  </div></section>
+
+  <section class="cs"><h2>How it evolved</h2><div class="body">
+    <ol class="iter">
+      <li><b>Version 1: Clean and editorial</b><p>Clear, but cold. It could have been anyone's portfolio.</p></li>
+      <li><b>Version 2: My practice notebook</b><p>Sticky notes and pink, borrowed from my practice journal. Personal, but too cute for a professional read.</p></li>
+      <li><b>Version 3: Back to my roots</b><p>Inspired by portfolios that carry their maker's culture, I chose Jaipur hand-block print, the craft of the city where my biggest project happened.</p></li>
+      <li><b>Version 4: Rounds of feedback</b><p>Photo, readability, motion, colour per category, and rewriting every project so it reads like a story, not a report.</p></li>
+    </ol>
+  </div></section>
+
+  <section class="cs"><h2>Colour</h2><div class="body">
+    <p>Every colour comes from natural dyes used in block printing. Each work category has its own, so switching filters feels like turning the page.</p>
+    <div class="swatches">
+      <div class="sw"><i style="background:#26305E"></i><div><b>Indigo</b><span>#26305E · Research</span></div></div>
+      <div class="sw"><i style="background:#1F4B43"></i><div><b>Leaf green</b><span>#1F4B43 · Service design</span></div></div>
+      <div class="sw"><i style="background:#7A2F27"></i><div><b>Madder</b><span>#7A2F27 · UX/UI &amp; product</span></div></div>
+      <div class="sw"><i style="background:#B9542F"></i><div><b>Rust</b><span>#B9542F · Accent</span></div></div>
+      <div class="sw"><i style="background:#F5F0E6"></i><div><b>Cloth</b><span>#F5F0E6 · Background</span></div></div>
+    </div>
+  </div></section>
+
+  <section class="cs"><h2>Type</h2><div class="body">
+    <div class="specimen">
+      <div><span class="big" style="font-family:var(--display);font-weight:300">Aa</span><b>Cormorant</b><span>Display. Elegant, a little old-world, like a printed label.</span></div>
+      <div><span class="big deva">ता</span><b>Noto Serif Devanagari</b><span>The last letter of my name, in Hindi. Two scripts, the way I think.</span></div>
+      <div><span class="big" style="font-family:var(--body)">Aa</span><b>Figtree</b><span>Body text. Friendly and easy to read at any size.</span></div>
+    </div>
+  </div></section>
+
+  <section class="cs"><h2>Motifs &amp; components</h2><div class="body">
+    <div class="motifs" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><use href="#rosette"/></svg><svg viewBox="0 0 100 130"><use href="#buta"/></svg><svg viewBox="0 0 80 120"><use href="#sprig"/></svg><svg viewBox="0 0 60 60"><use href="#dotflower"/></svg>
+    </div>
+    <ol class="steps">
+      <li><div><b>Hand-drawn block-print motifs</b><p>A rosette, a buta, a sprig and a dot flower, drifting slowly like cloth in a breeze.</p></div></li>
+      <li><div><b>Scooped "jharokha" frames</b><p>Project panels and cards with carved corners, like windows.</p></div></li>
+      <li><div><b>A speech bubble that opens</b><p>"Hi, I'm Ishita!" expands into the About page, so meeting me feels like a conversation.</p></div></li>
+      <li><div><b>Small moments of play</b><p>Filters that recolour the work, a fact shuffle, and a chappal you can doodle on.</p></div></li>
+    </ol>
+  </div></section>
+
+  <section class="cs"><h2>Writing</h2><div class="body">
+    <p>Every project follows the same rhythm, so a reader always knows where they are: <b>In 30 seconds</b> for skimmers, <b>Why I did this</b>, the process in that project's own words, <b>A moment that stayed with me</b>, and <b>What I learned</b>. I replaced "Problem" with "The gap", because most of my work starts with noticing what's missing, not what's broken.</p>
+  </div></section>
+
+  <aside class="moment frame"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg><div><span class="k">A moment that stayed with me</span><blockquote>The first version was clean. It just wasn't me.</blockquote><p>That's when I stopped designing a portfolio and started designing something that sounds like me.</p></div></aside>
+
+  <section class="cs"><h2>What I learned</h2><div class="body"><div class="learn"><div data-n="01"><b>The medium is the message</b><p>How a portfolio feels says as much as what it shows.</p></div><div data-n="02"><b>Systems make variety calm</b><p>Seven very different projects feel like one body of work because they share a system.</p></div><div data-n="03"><b>Write for skimmers</b><p>Most readers skim first. Give them a 30-second version, then reward the ones who stay.</p></div></div></div></section>
+  <aside class="mininote"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#dotflower"/></svg><p>Got a thought on <b>this portfolio</b>?</p><button class="btn" type="button" data-note="this portfolio">Gimme a note ✎</button></aside>
+  <div class="case-next"><button class="btn" type="button" data-go="moonday">← Moonday</button><button class="btn sm" type="button" data-go="work">All projects</button><button class="btn" type="button" data-go="home">Back to the top →</button></div>
+</main>
+
+
+
+<aside class="pop hide" id="pop" aria-label="Detailed process"><button class="x" id="pop-x" type="button" aria-label="Close">×</button><b>Want to see the detailed process?</b><p>Sketches, maps, notes and iterations for this project, all in one place.</p><a class="btn" id="pop-link" href="https://drive.google.com/file/d/1nrIWrK__9xsshPJYuE5ZzB1Qf27rOHCt/view?usp=drive_link" target="_blank" rel="noopener">Open the full process ↗</a></aside>
+<dialog id="note-dlg" aria-labelledby="note-t">
+  <div class="box">
+    <form name="project-note" id="note-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <button class="x" type="button" id="note-x" aria-label="Close">×</button>
+      <h3 id="note-t">A note on <span id="note-proj">this project</span></h3>
+      <input type="hidden" name="form-name" value="project-note">
+      <input type="hidden" name="project" id="note-project" value="">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <label for="note-text">What did you think?<textarea id="note-text" name="note" placeholder="A question, a thought, something I could do better…" required></textarea></label>
+      <label for="note-name">Your name (optional)<input type="text" id="note-name" name="name" autocomplete="name"></label>
+      <div class="row"><button class="btn send" type="submit" id="note-send">Send →</button><span class="msg" id="note-msg" role="status" aria-live="polite"></span></div>
+    </form>
+  </div>
+</dialog>
+<dialog id="zoom" aria-label="Enlarged image"><form method="dialog"><button type="submit">Close ✕</button></form><img id="zoom-img" alt=""></dialog>
+
+<script>
+(function(){
+  var views = {home:'v-home',work:'v-home',about:'v-about',funsies:'v-funsies',dignity:'v-dignity',iaim:'v-iaim',cpc:'v-cpc',neuro:'v-neuro',medicare:'v-medicare',moonday:'v-moonday',site:'v-site'};
+  var nav = document.getElementById('nav'), wipe = document.getElementById('wipe');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var homeY = 0, current = 'home';
+
+  function render(key){
+    if (!views[key]) key = 'home';
+    if (current === 'home') homeY = window.scrollY;
+    document.querySelectorAll('.view').forEach(function(v){ v.hidden = v.id !== views[key]; });
+    nav.classList.toggle('dark', key === 'about');
+    var active = key === 'about' ? 'about' : key === 'funsies' ? 'funsies' : 'work';
+    document.querySelectorAll('[data-nav]').forEach(function(a){ if (a.dataset.nav === active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    if (key === 'work'){ var w = document.getElementById('work'); requestAnimationFrame(function(){ w.scrollIntoView(); }); }
+    else if (key === 'home' && views[current] === 'v-home'){ /* stay */ }
+    else if (key === 'home'){ window.scrollTo(0, homeY); }
+    else window.scrollTo(0, 0);
+    current = key;
+    if (key === 'funsies') sizeCanvases();
+    showPop(['dignity','iaim','cpc','neuro','medicare','moonday'].indexOf(key) > -1);
+    prog.hidden = ['dignity','iaim','cpc','neuro','medicare','moonday','site'].indexOf(key) < 0; updateProg();
+  }
+  var prog = document.getElementById('progress');
+  function updateProg(){ if (prog.hidden) return; var h = document.documentElement.scrollHeight - innerHeight; prog.style.width = (h > 0 ? Math.min(100, scrollY / h * 100) : 0) + '%'; }
+  window.addEventListener('scroll', updateProg, {passive:true});
+  var POPLINKS = {"dignity": "https://drive.google.com/file/d/1nrIWrK__9xsshPJYuE5ZzB1Qf27rOHCt/view?usp=drive_link", "iaim": "https://drive.google.com/file/d/188zaBNdsnFjmcSXCF9yURUInLhNMiRmz/view?usp=drive_link", "cpc": "https://drive.google.com/file/d/1u9ab6S6vrxkLqaqDFYyuAQBC2763VBHN/view?usp=drive_link", "neuro": "https://drive.google.com/file/d/1ODrA8sFwo7-rCeR7aeg4zXXel2K6Xlht/view?usp=drive_link", "medicare": "https://drive.google.com/file/d/1u_UTaEAwlFL-ZdjFoZYXWh0s1ed-SDcA/view?usp=drive_link", "moonday": "https://drive.google.com/drive/folders/1fQ86nihJmLhL8ZO9PALT51-5r16sOCy-?usp=drive_link"};
+  var pop = document.getElementById('pop'), popT, popClosed = {};
+  function showPop(on){
+    clearTimeout(popT); pop.classList.add('hide');
+    var pl = POPLINKS[current]; if (pl) document.getElementById('pop-link').href = pl;
+    if (on && !popClosed[current]) popT = setTimeout(function(){ pop.classList.remove('hide'); }, 1800);
+  }
+  document.getElementById('pop-x').addEventListener('click', function(){ popClosed[current] = true; pop.classList.add('hide'); });
+  function go(key, fromEl){
+    var target = key === 'home' ? '' : key;
+    if (key === 'about' && fromEl && fromEl.id === 'bubble' && !reduce){
+      var r = fromEl.getBoundingClientRect(), x = r.left + r.width/2, y = r.top + r.height/2;
+      wipe.style.transition = 'none'; wipe.style.opacity = '1';
+      wipe.style.clipPath = 'circle(0px at ' + x + 'px ' + y + 'px)';
+      void wipe.offsetWidth;
+      wipe.style.transition = '';
+      wipe.style.clipPath = 'circle(150vmax at ' + x + 'px ' + y + 'px)';
+      setTimeout(function(){
+        setHash(target); render(key);
+        wipe.style.transition = 'opacity .45s'; wipe.style.opacity = '0';
+        setTimeout(function(){ wipe.style.transition = 'none'; wipe.style.clipPath = 'circle(0px at 50% 50%)'; wipe.style.opacity = '1'; }, 480);
+      }, 650);
+      return;
+    }
+    setHash(target); render(key);
+  }
+  function setHash(h){ if (h) { if (location.hash !== '#' + h) history.pushState(null, '', '#' + h); } else history.pushState(null, '', location.pathname + location.search); }
+  document.addEventListener('click', function(e){
+    var g = e.target.closest('[data-go]');
+    if (!g) return;
+    e.preventDefault();
+    var key = g.dataset.nav === 'work' ? 'work' : g.dataset.go;
+    go(key, g);
+  });
+  window.addEventListener('popstate', function(){ render(location.hash.slice(1) || 'home'); });
+  render(location.hash.slice(1) || 'home');
+
+  // filters
+  var pills = document.querySelectorAll('.pill'), projs = document.querySelectorAll('.proj');
+  var box = document.getElementById('projects'), showing = document.getElementById('showing');
+  var uxn = document.getElementById('uxnote'), uxT;
+  function uxNote(){ clearTimeout(uxT); uxn.classList.add('show'); uxT = setTimeout(function(){ uxn.classList.remove('show'); }, 4200); }
+  document.getElementById('f-ux').addEventListener('mouseenter', function(){ if (!uxn.dataset.seen){ uxn.dataset.seen = '1'; uxNote(); } });
+  uxn.addEventListener('click', function(){ uxn.classList.remove('show'); });
+  var names = {all:'all', research:'Research', service:'Service Design', ux:'UX/UI & Product'};
+  pills.forEach(function(p){ p.addEventListener('click', function(){
+    var f = p.dataset.f, n = 0;
+    pills.forEach(function(x){ x.setAttribute('aria-pressed', x === p ? 'true' : 'false'); });
+    box.dataset.f = f;
+    if (f === 'ux') uxNote(); else uxn.classList.remove('show');
+    projs.forEach(function(k){
+      var on = f === 'all' || k.dataset.cats.split(' ').indexOf(f) > -1;
+      k.hidden = !on; k.classList.remove('in');
+      if (on){ n++; void k.offsetWidth; k.style.animationDelay = (n * 60) + 'ms'; k.classList.add('in'); }
+    });
+    showing.innerHTML = f === 'all' ? 'Showing <b>all ' + n + ' projects</b>' : 'Showing <b>' + n + ' ' + names[f] + '</b> project' + (n === 1 ? '' : 's');
+  }); });
+
+  // niche circle
+  var nsteps = [
+    "It started with a few women at BMVSS. Their chappals slipped off their prosthetic foot without them noticing, worse in the rain, so they stopped wearing the footwear they loved.",
+    "A clip and strap that holds footwear on a prosthetic foot, without changing either, works for every prosthetic user, not only women.",
+    "A flat-sided version turned out to help people without prosthetics too, like older adults whose slippers slide off.",
+    "Designed for a few women, useful for anyone who needs a steadier step. Design for all, by designing for niche."
+  ];
+  var ni = 0, nb = document.getElementById('niche-next'), nt = document.getElementById('niche-text');
+  nb.addEventListener('click', function(){
+    ni = (ni + 1) % nsteps.length;
+    document.querySelectorAll('.ring').forEach(function(r){ r.classList.toggle('on', Number(r.dataset.r) <= ni); });
+    document.querySelectorAll('.ndots i').forEach(function(d, k){ d.classList.toggle('on', k <= ni); });
+    nt.textContent = nsteps[ni];
+    nb.textContent = ni === nsteps.length - 1 ? 'Start again ↺' : 'Widen the circle →';
+  });
+
+  // facts shuffle
+  var facts = [
+    ["One woman had painted her prosthetic leg with nail polish, to make it feel like her own.", "From Jaipur, 2026"],
+    ["At BMVSS, out of about fifty people a day, we saw two or three women.", "From Jaipur, 2026"],
+    ["The first metal ring of the Chappal Lock was a bent paperclip.", "From the prototyping table"],
+    ["At iAIM, changes to tomorrow's diet close at 4:30 pm. After that, it's WhatsApp.", "From Bengaluru, 2026"],
+    ["Every daily diet chart at iAIM is made in three copies.", "From Bengaluru, 2026"],
+    ["One palliative care team of eight looks after 305 people across seven gram panchayats.", "From Kundapura, 2026"],
+    ["A chappal slipped. A garment caught. Rain changed the stability of the prosthesis.", "Beyond the Fitting, 2026"]
+  ];
+  var fi = 0, fq = document.getElementById('fact'), fs = document.getElementById('fact-src');
+  document.getElementById('shuffle').addEventListener('click', function(){
+    var n; do { n = Math.floor(Math.random() * facts.length); } while (n === fi && facts.length > 1);
+    fi = n; fq.textContent = facts[n][0]; fs.textContent = facts[n][1];
+  });
+
+  // doodle boards
+  var cans = ['cv-1','cv-2','cv-3'].map(function(id){ return document.getElementById(id); });
+  function sizeCanvases(){
+    cans.forEach(function(c){
+      var r = c.getBoundingClientRect(); if (!r.width) return;
+      var d = window.devicePixelRatio || 1;
+      if (c.width === Math.round(r.width * d)) return;
+      c.width = Math.round(r.width * d); c.height = Math.round(r.height * d);
+      var x = c.getContext('2d'); x.scale(d, d); x.lineCap = 'round'; x.lineJoin = 'round'; x.lineWidth = 3; x.strokeStyle = '#26305E';
+    });
+  }
+  cans.forEach(function(c){
+    var drawing = false, last = null;
+    function pt(e){ var r = c.getBoundingClientRect(); return {x: e.clientX - r.left, y: e.clientY - r.top}; }
+    c.addEventListener('pointerdown', function(e){ sizeCanvases(); drawing = true; last = pt(e); c.setPointerCapture(e.pointerId); });
+    c.addEventListener('pointermove', function(e){ if (!drawing) return; var p = pt(e), x = c.getContext('2d'); x.beginPath(); x.moveTo(last.x, last.y); x.lineTo(p.x, p.y); x.stroke(); last = p; });
+    ['pointerup','pointercancel','pointerleave'].forEach(function(t){ c.addEventListener(t, function(){ drawing = false; }); });
+  });
+  document.getElementById('clear').addEventListener('click', function(){ cans.forEach(function(c){ c.getContext('2d').clearRect(0, 0, c.width, c.height); }); });
+  window.addEventListener('resize', function(){ if (current === 'funsies') { cans.forEach(function(c){ c.width = 0; }); sizeCanvases(); } });
+
+
+  // if a note can't be saved, offer to send it by email so nothing is lost
+  function mailFallback(el, subject, fd){
+    var lines = []; fd.forEach(function(v, k){ if (v && k !== 'form-name' && k !== 'bot-field') lines.push(k + ': ' + v); });
+    var a = document.createElement('a');
+    a.href = 'mailto:iishitasarin2021@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    a.textContent = 'Send it by email instead'; a.style.textDecoration = 'underline'; a.style.color = 'inherit';
+    el.className = 'msg err'; el.textContent = "Couldn't save it here. "; el.appendChild(a);
+  }
+  // feedback form (stored by Netlify Forms on the live site)
+  var fbf = document.getElementById('fb-form'), fbm = document.getElementById('fb-msg'), fbs = document.getElementById('fb-say');
+  var says = {1:'Hmm, tell me what went wrong.',2:'Okay, what would make it better?',3:'Not bad! What would make it great?',4:'Yay, thank you!',5:'You made my day!'};
+  fbf.querySelectorAll('input[name=rating]').forEach(function(r){ r.addEventListener('change', function(){ fbs.textContent = says[r.value]; }); });
+  fbf.addEventListener('submit', function(e){
+    e.preventDefault();
+    var fd = new FormData(fbf);
+    if (!fd.get('rating') && !String(fd.get('liked')||'').trim() && !String(fd.get('better')||'').trim()){ fbm.className = 'msg err'; fbm.textContent = 'Add a rating or a few words first.'; return; }
+    var btn = document.getElementById('fb-send'); btn.disabled = true; fbm.className = 'msg'; fbm.textContent = 'Sending…';
+    fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(fd).toString()})
+      .then(function(r){ if (!r.ok) throw 0; fbm.className = 'msg ok'; fbm.textContent = 'Thank you! Your note reached me.'; fbf.reset(); fbs.textContent = ''; })
+      .catch(function(){ mailFallback(fbm, 'Portfolio feedback', fd); })
+      .then(function(){ btn.disabled = false; });
+  });
+
+
+  // per-project note
+  var nd = document.getElementById('note-dlg'), nf = document.getElementById('note-form'), nm = document.getElementById('note-msg');
+  document.querySelectorAll('[data-note]').forEach(function(b){ b.addEventListener('click', function(){
+    document.getElementById('note-proj').textContent = b.dataset.note;
+    document.getElementById('note-project').value = b.dataset.note;
+    nm.textContent = ''; nm.className = 'msg';
+    if (nd.showModal) nd.showModal(); document.getElementById('note-text').focus();
+  }); });
+  document.getElementById('note-x').addEventListener('click', function(){ nd.close(); });
+  nd.addEventListener('click', function(e){ if (e.target === nd) nd.close(); });
+  nf.addEventListener('submit', function(e){
+    e.preventDefault();
+    var fd = new FormData(nf), btn = document.getElementById('note-send');
+    if (!String(fd.get('note')||'').trim()){ nm.className = 'msg err'; nm.textContent = 'Write a few words first.'; return; }
+    btn.disabled = true; nm.className = 'msg'; nm.textContent = 'Sending…';
+    fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(fd).toString()})
+      .then(function(r){ if (!r.ok) throw 0; nm.className = 'msg ok'; nm.textContent = 'Thank you! It reached me.'; document.getElementById('note-text').value = ''; setTimeout(function(){ nd.close(); }, 1600); })
+      .catch(function(){ mailFallback(nm, 'Note on ' + (fd.get('project') || 'my portfolio'), fd); })
+      .then(function(){ btn.disabled = false; });
+  });
+
+  // zoom
+  var dlg = document.getElementById('zoom'), zi = document.getElementById('zoom-img');
+  document.querySelectorAll('[data-zoom]').forEach(function(b){ b.addEventListener('click', function(){ zi.src = b.dataset.zoom; zi.alt = b.querySelector('img').alt; if (dlg.showModal) dlg.showModal(); }); });
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+})();
+</script>
+</body>
+</html>

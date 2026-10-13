@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Forms</title>
+</head>
+<body>
+<!-- Netlify reads this file at deploy time to register the site's forms. Visitors never need it. -->
+<form name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="feedback">
+  <input name="bot-field">
+  <input name="rating">
+  <textarea name="liked"></textarea>
+  <textarea name="better"></textarea>
+  <input name="name">
+  <input name="role">
+  <input name="quote_ok">
+</form>
+<form name="project-note" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="project-note">
+  <input name="bot-field">
+  <input name="project">
+  <textarea name="note"></textarea>
+  <input name="name">
+</form>
+</body>
+</html>
