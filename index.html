@@ -61,7 +61,7 @@ svg.m{display:block}
 .name .deva{font-size:.74em;letter-spacing:0;color:var(--indigo)}
 .portrait{position:relative;z-index:2;width:clamp(14rem,26vw,20rem);margin-top:clamp(1.4rem,3vw,2.6rem)}
 .portrait::before{content:"";position:absolute;left:-14%;right:-14%;top:30%;bottom:0;background:var(--indigo-soft);border-radius:999px 999px 0 0;z-index:-1}
-.hairflower{position:absolute;left:62.4%;top:23.6%;width:9.5%;min-width:1.7rem;translate:-50% -50%;color:var(--rust);z-index:3;pointer-events:none;filter:drop-shadow(0 2px 3px rgba(30,32,48,.28));animation:petal 6s ease-in-out infinite}
+.hairflower{position:absolute;left:33.1%;top:23.3%;width:9.5%;min-width:1.7rem;translate:-50% -50%;color:var(--rust);z-index:3;pointer-events:none;filter:drop-shadow(0 2px 3px rgba(30,32,48,.28));animation:petal 6s ease-in-out infinite}
 @keyframes petal{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
 .portrait::after{content:"";position:absolute;left:-20%;right:-20%;bottom:0;height:2px;background:var(--line)}
 .portrait img{width:100%;display:block;filter:drop-shadow(0 18px 30px rgba(30,32,48,.16))}
@@ -142,6 +142,7 @@ footer{text-align:center;padding-block:1.5rem 2.5rem;color:var(--soft);font-size
 .me .pic{position:relative;max-width:22rem;margin-inline:auto;width:100%}
 .me .pic .win{--c:28px;background:var(--cloth);padding:1.4rem 1.2rem 0;display:flex;align-items:flex-end}
 .me .pic img{width:100%;display:block}
+.aimg{position:relative;width:100%}
 .me .pic .stamp{color:var(--on-indigo);width:4.5rem;right:-1.4rem;top:-1.4rem}
 .eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-indigo-soft)}
 .me h1{font-size:clamp(2.8rem,2rem + 3.5vw,4.8rem);font-weight:300;margin-top:.6rem}
@@ -735,7 +736,7 @@ dialog button{background:var(--cloth);color:var(--indigo);border:0;border-radius
     <button class="about-back" type="button" data-go="home">← Back</button>
     <section class="me">
       <div class="pic">
-        <div class="win frame"><img src="img/ishita.png" alt="Ishita Sarin"></div>
+        <div class="win frame"><div class="aimg"><img src="img/ishita.png" alt="Ishita Sarin"><svg class="hairflower" viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg></div></div>
         <svg class="stamp" viewBox="0 0 100 100" aria-hidden="true"><use href="#rosette"/></svg>
       </div>
       <div>
